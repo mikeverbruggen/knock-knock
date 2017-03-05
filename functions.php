@@ -27,9 +27,9 @@ function custom_settings_page() { ?>
     <form method="post" action="options.php">
        <?php
            settings_fields( 'section' );
-           do_settings_sections( 'theme-options' );      
-           submit_button(); 
-       ?>          
+           do_settings_sections( 'theme-options' );
+           submit_button();
+       ?>
     </form>
   </div>
 <?php }
@@ -39,11 +39,17 @@ function setting_say_hello() { ?>
   <input type="text" name="say_hello" id="say_hello" value="<?php echo get_option( 'say_hello' ); ?>" />
 <?php }
 
+function setting_footer_text() { ?>
+	<input type="text" name="footer_text" id="footer_text" value="<?php echo get_option( 'footer_text' ); ?>" />
+<?php }
+
 function custom_settings_page_setup() {
   add_settings_section( 'section', 'All Settings', null, 'theme-options' );
   add_settings_field( 'say_hello', 'Begroeting', 'setting_say_hello', 'theme-options', 'section' );
+	add_settings_field( 'footer_text', 'Footer tekst', 'setting_footer_text', 'theme-options', 'section' );
 
   register_setting('section', 'say_hello');
+	register_setting('section', 'footer_text');
 }
 add_action( 'admin_init', 'custom_settings_page_setup' );
 
