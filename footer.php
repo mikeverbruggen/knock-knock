@@ -1,7 +1,7 @@
      <!-- Footer
       ================================================== -->
       <footer class="footer">
-		<p><?php echo get_option('footer_text'); ?></p>
+		      <p><?php echo get_option('footer_text'); ?></p>
       </footer>
 
     </div><!-- /container -->
