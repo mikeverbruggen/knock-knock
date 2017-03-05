@@ -37,7 +37,7 @@
 			    <a href="#"
 			          class="dropdown-toggle"
 			          data-toggle="dropdown">
-			          <?php echo get_option('say_hello'); ?> Alex Verbruggen
+			          <?php echo get_option('say_hello'); ?> Piet Verbruggen
 			          <b class="caret"></b>
 			    </a>
 			    <ul class="dropdown-menu">
