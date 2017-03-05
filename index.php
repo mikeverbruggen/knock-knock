@@ -1,36 +1,17 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Front to the WordPress application. This file doesn't do anything, but loads
+ * wp-blog-header.php which does and tells WordPress to load the theme.
+ *
+ * @package WordPress
+ */
 
-<section id="grid-system">
+/**
+ * Tells WordPress to load the WordPress theme and output it.
+ *
+ * @var bool
+ */
+define('WP_USE_THEMES', true);
 
-	<div class="page-header">
-		<h1>Berichten (index)</h1>
-	</div>
-
-	<div class="row">
-		<!-- Content -->
-		<div class="span8">
-			
-		<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
-
-			get_template_part( 'content', get_post_format() );
-
-		endwhile; ?>
-		
-		<nav>
-			<ul class="pager">
-				<li><?php next_posts_link( 'Vorige' ); ?></li>
-				<li><?php previous_posts_link( 'Volgende' ); ?></li>
-			</ul>
-		</nav>
-		
-		<?php endif; ?>
-
-		</div><!-- /Content -->
-
-<?php get_sidebar(); ?>
-
-	</div>
-
-</section>
-
-<?php get_footer(); ?>
+/** Loads the WordPress Environment and Template */
+require( dirname( __FILE__ ) . '/wp-blog-header.php' );

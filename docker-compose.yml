@@ -1,0 +1,22 @@
+database:
+  image: mariadb
+  ports:
+    - 8079:3306
+  volumes:
+    - ./mariadb:/var/lib/mysql
+  environment:
+    MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+wordpress:
+  image: wordpress
+  volumes:
+    - ./:/var/www/html
+  ports:
+    - 8080:80
+  links:
+    - database:mysql
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  ports:
+    - 8081:80
+  links:
+    - database:db

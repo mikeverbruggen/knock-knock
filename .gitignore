@@ -1,0 +1,13 @@
+/mariadb
+/wp-admin
+!/wp-content/
+/wp-content/*
+!/wp-content/themes/
+/wp-content/themes/*
+!/wp-content/themes/klopvaart-intranet/
+/wp-includes
+/.htaccess
+/index.php
+/license.txt
+/readme.html
+/*.php
