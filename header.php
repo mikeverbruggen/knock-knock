@@ -37,15 +37,19 @@
 			    <a href="#"
 			          class="dropdown-toggle"
 			          data-toggle="dropdown">
-			          <?php echo get_option('say_hello'); ?> Mike Verbruggen
+			          <?php echo get_option('say_hello'); ?>
+			 
+					<?php $current_user = wp_get_current_user();
+				    	echo $current_user->display_name;
+					?>
 			          <b class="caret"></b>
 			    </a>
 			    <ul class="dropdown-menu">
-	                <li><a href="/bewoners/mike-verbruggen">Profiel bekijken</a></li>
-	                <li><a href="/profiel">Profiel bewerken</a></li>
-	                <li><a href="/wachtwoord-aanpassen">Wachtwoord aanpassen</a></li>
+	                <li><a href="/">Profiel bekijken</a></li>
+	                <li><a href="/">Profiel bewerken</a></li>
+	                <li><a href="/">Wachtwoord aanpassen</a></li>
 	                <li class="divider"></li>
-	                <li><a href="http://intranet.klopvaart.nl/?ACT=22">Uitloggen</a></li>
+	                <li><a href="/">Uitloggen</a></li>
 			    </ul>
 			  </li>
 
@@ -83,13 +87,9 @@
 
 
 
-<form class="navbar-search pull-right" method="post" action="http://intranet.klopvaart.nl/"  >
+<form class="navbar-search pull-right" method="post" action="/"  >
 <div class='hiddenFields'>
-<input type="hidden" name="ACT" value="12" />
-<input type="hidden" name="XID" value="07b0611f021189fb1ed117e2878a254ad12b283a" />
-<input type="hidden" name="RES" value="" />
-<input type="hidden" name="meta" value="qe/QBPqulxDZg1u/ygqYHKSLjaAy0TO2yZuawr6vFl5d9YFcqOsnCfC+POo6hEhyeIquNflAtFe+jEHpNFL1H8ZKZ11SvFDb8O2J3pk1LhFTbo/92MdGlhpcsiKX0PpTekgVpdZsRYUQai84QB/kOJO8tJSK6IE5vre+fK2ELOtAt4tFqbCWIHt729LkxYilt6NatmppqtDNWbvSDpIe1PqVQWp7Td8JTmmb1XeAEe9X0YUsdxENBqZKdOntHU3vnmw5UQCRNc8rgt+RclGhEUMcAqw9QpqIVe4KeW3U8EbyXx6tvk2lpWST8SPa23UWDrBvB5f3V5yG15zZdZ518LKPMO+Rykr2hpotSz4kxdB4curtOPO5jbKsGKh7CtQtTgw5EM6gBS9WEe0NBDXWiZhgF3RikPHMvKjHRibOSVlK+UZnyRxq3wkDxOOhn44D/FUqynLKFwVD19/1TBkXJQ==" />
-<input type="hidden" name="site_id" value="1" />
+
 </div>
 
 
