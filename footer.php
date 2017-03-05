@@ -1,7 +1,7 @@
      <!-- Footer
       ================================================== -->
       <footer class="footer">
-        <p>Heb je vragen of opmerkingen? Stuur een mailtje naar Alex <a href="mailto:internet@klopvaart.nl">internet@klopvaart.nl</a></p>
+		<p><?php echo get_option('footer_text'); ?></p>
       </footer>
 
     </div><!-- /container -->
