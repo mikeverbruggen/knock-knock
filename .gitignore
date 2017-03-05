@@ -7,7 +7,6 @@
 !/wp-content/themes/klopvaart-intranet/
 /wp-includes
 /.htaccess
-/index.php
 /license.txt
 /readme.html
 /*.php
