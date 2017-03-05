@@ -44,11 +44,12 @@ function setting_footer_text() { ?>
 <?php }
 
 function custom_settings_page_setup() {
-  add_settings_section( 'section', 'All Settings', null, 'theme-options' );
-  add_settings_field( 'say_hello', 'Begroeting', 'setting_say_hello', 'theme-options', 'section' );
+  	add_settings_section( 'section', 'All Settings', null, 'theme-options' );
+
+  	add_settings_field( 'say_hello', 'Begroeting', 'setting_say_hello', 'theme-options', 'section' );
 	add_settings_field( 'footer_text', 'Footer tekst', 'setting_footer_text', 'theme-options', 'section' );
 
-  register_setting('section', 'say_hello');
+	register_setting('section', 'say_hello');
 	register_setting('section', 'footer_text');
 }
 add_action( 'admin_init', 'custom_settings_page_setup' );
