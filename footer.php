@@ -1,7 +1,7 @@
      <!-- Footer
       ================================================== -->
       <footer class="footer">
-        <p>Heb je vragen of opmerkingen? Stuur een mailtje naar de internet commissie <a href="mailto:internet@klopvaart.nl">internet@klopvaart.nl</a></p>
+        <p>Heb je vragen of opmerkingen? Stuur een mailtje naar Alex <a href="mailto:internet@klopvaart.nl">internet@klopvaart.nl</a></p>
       </footer>
 
     </div><!-- /container -->
