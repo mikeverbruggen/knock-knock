@@ -9,7 +9,7 @@ database:
 wordpress:
   image: wordpress
   volumes:
-    - ./wordpress:/var/www/html
+    - ./wordpress/wp-content:/var/www/html/wp-content
   ports:
     - 8080:80
   links:
