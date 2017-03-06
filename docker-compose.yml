@@ -3,13 +3,13 @@ database:
   ports:
     - 8079:3306
   volumes:
-    - ./mariadb:/var/lib/mysql
+    - ./database:/var/lib/mysql
   environment:
     MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
 wordpress:
   image: wordpress
   volumes:
-    - ./:/var/www/html
+    - ./wordpress:/var/www/html
   ports:
     - 8080:80
   links:
