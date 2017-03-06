@@ -1,6 +1,6 @@
 # Klopvaart Intranet
 
-This is the WordPress theme for the [Klopvaart](http://www.klopvaart.nl) Intranet.
+This repository contains the development environment and the WordPress theme for the [Klopvaart](http://www.klopvaart.nl) Intranet.
 
 ## Setup
 
