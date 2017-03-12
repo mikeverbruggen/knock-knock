@@ -1,473 +1,215 @@
- <!DOCTYPE html>
-<html lang="en">
+
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <link rel="icon" href="../../favicon.ico">
 
-    <title>Klopvaart Intranet</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap core CSS -->
+    <title>Knock Knock</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-    <!-- Custom styles for this template -->
-    <link href="style.css" rel="stylesheet">
+    <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet">
+
+	<?php wp_head(); ?>
+
   </head>
-<!-- NAVBAR
-================================================== -->
   <body>
-    <div class="navbar-wrapper">
+
+	<div class="navbar-wrapper">
       <div class="container">
+		<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary bg-faded">
 
-        <nav class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <col-md- class="sr-only">Toggle navigation</col-md->
-                <col-md- class="icon-bar"></col-md->
-                <col-md- class="icon-bar"></col-md->
-                <col-md- class="icon-bar"></col-md->
-              </button>
-              <a class="navbar-brand" href="#">Klopvaart Intranet</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
+		  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
 
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">Agenda</a></li>
-                <li><a href="#contact">Documentatie</a></li>
-                <li><a href="#about">Bewoners</a></li>
-              </ul>
+		  <a class="navbar-brand" href="#">Knock Knock</a>
 
-		    <ul class="nav navbar-nav navbar-right">
-			      <li class="dropdown search-dropdown">
-			        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Zoeken <col-md- class="caret"></col-md-></a>
-			        <ul class="dropdown-menu">
-			          <li><form class="navbar-form navbar-right">
-			            <input type="text" class="form-control" placeholder="Search...">
-			          </form></li>
-			        </ul>
-			      </li>
-		      <li class="dropdown">
-		        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mike Verbruggen<col-md- class="caret"></col-md-></a>
-		        <ul class="dropdown-menu">
-		          <li><a href="#">Action</a></li>
-		          <li><a href="#">Another action</a></li>
-		          <li><a href="#">Something else here</a></li>
-		          <li role="separator" class="divider"></li>
-		          <li class="dropdown-header">Nav header</li>
-		          <li><a href="#">Separated link</a></li>
-		          <li><a href="#">One more separated link</a></li>
-		        </ul>
+		  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+		    <ul class="navbar-nav  mr-auto">
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Posts</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Agenda</a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="#">Documentation</a>
+		      </li>
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Residents
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		          <a class="dropdown-item" href="#">Action</a>
+		          <a class="dropdown-item" href="#">Another action</a>
+		          <a class="dropdown-item" href="#">Something else here</a>
+		        </div>
 		      </li>
 		    </ul>
-
-
-
-            </div>
-          </div>
-        </nav>
-
+		    <form class="form-inline my-2 my-lg-0">
+		      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+		    </form>
+		    <ul class="navbar-nav">
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          User Profile
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		          <a class="dropdown-item" href="#">Action</a>
+		          <a class="dropdown-item" href="#">Another action</a>
+		          <a class="dropdown-item" href="#">Something else here</a>
+		        </div>
+		      </li>
+		    </ul>
+		  </div>
+		</nav>
+      </div>
+	</div><!-- /.navbar-wrapper -->
+	
+	<div class="jumbotron">
+      <div class="container">
+        <h1>Documentatie</h1>
       </div>
     </div>
 
-
-		<div class="jumbotron">
-	      <div class="container">
-	        <h1>Documentatie</h1>
-	      </div>
-	    </div>
-
-		<div class="container page">
-
-		<section id="documentation">
-
-			<div class="row">
-
-			<div class="col-md-8 overview">
-
-					<div class="message">
-					<div class="message-header">
-						<h3>Algemeen</h3>
-					</div>
-					<div class="message-body">
-						<div class="f_rijtje"><ul class="overview">
-							<li><i class="icon-file"></i><a href="/documentatie/adres-vereniging">Adres vereniging</a> </li>
-							<li><i class="icon-file"></i><a href="/documentatie/contributie">Contributie</a> </li>
-							<li><i class="icon-file"></i><a href="/documentatie/declareren">Declareren</a> </li></ul>
-						</div>
-
-						<div class="f_rijtje"><ul class="overview">
-							<li><i class="icon-file"></i><a href="/documentatie/e-mailadressen-van-de-vereniging">E-mailadressen van de vereniging</a> </li>
-							<li><i class="icon-file"></i><a href="/documentatie/rondzendmail">Rondzendmail</a> </li>
-							<li><i class="icon-file"></i><a href="/documentatie/wie-doet-wat-lijst">Wie-doet-wat lijst</a> </li></ul>
-						</div>
-					</div>
-				</div>
-
-				<div class="message">
-					<div class="message-header">
-						<h3>Bestuur</h3>
-					</div>
-					<div class="message-body">
-
-					<div class="f_rijtje"><ul class="overview">
-
-				<li><i class="icon-file"></i><a href="/documentatie/algemene-ledenvergadering">Algemene Ledenvergadering</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/bestuur">Bestuur 2015/16</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/financien">Financiën</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/huishoudelijk-reglement">Huishoudelijk Reglement</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/notulen-alv">Notulen ALV</a> </li></ul>
+<div class="container">
+	
+  <div class="row">
+    <div class="col-8">
+	
+		<div class="card text-center">
+		  <div class="card-header">
+		    Featured
+		  </div>
+		  <div class="card-block">
+		    <h4 class="card-title">Special title treatment</h4>
+		    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+		    <a href="#" class="btn btn-primary">Go somewhere</a>
+		  </div>
+		  <div class="card-footer text-muted">
+		    2 days ago
+		  </div>
 		</div>
-
-		<div class="f_rijtje"><ul class="overview">
-
-				<li><i class="icon-file"></i><a href="/documentatie/notulen-bestuursvergadering">Notulen bestuursvergadering</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/omgaan-met-conflicten">Omgaan met conflicten</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/statuten">Statuten</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/vereniging">Vereniging</a> </li></ul>
-						</div>
-					</div>
-				</div>
-
-					<div class="message">
-					<div class="message-header">
-						<h3>Commissies</h3>
-					</div>
-					<div class="message-body">
-		<div class="f_rijtje"><ul class="overview">
-
-				<li><i class="icon-file"></i><a href="/documentatie/activiteiten">Activiteiten</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/barcommissie">Barcommissie</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/beheercommissie">Beheercommissie</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/commissies">Commissies</a>  <col-md- style="color:black;">Concept</col-md-></li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/klopper">De Klopper</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/eetcafe">Eetcafé</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/filmcommissie">Filmcommissie</a> </li></ul>
-		</div>
-
-		<div class="f_rijtje"><ul class="overview">
-
-				<li><i class="icon-file"></i><a href="/documentatie/internetcommissie">Internetcommissie</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/kascommissie">Kascommissie</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/tuincommissie">Tuincommissie</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/voco">VoCo</a>  <col-md- style="color:black;">Concept</col-md-></li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/wachtlijstcommissie">Wachtlijstcommissie</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/welkommissie">Welkommissie</a> </li></ul>
-		</div>
-
-
-					</div>
-				</div>
-
-
-
-
-					<div class="message">
-					<div class="message-header">
-						<h3>Faciliteiten</h3>
-					</div>
-					<div class="message-body">
-
-		<div class="f_rijtje"><ul class="overview">
-
-				<li><i class="icon-file"></i><a href="/documentatie/bakfiets">Bakfiets</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/beamer">Beamer</a>  <col-md- style="color:black;">Concept</col-md-></li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/boormachine">Boormachine</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/dartboard">Dartboard</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/pooltafel">Pooltafel</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/projectruimte">Projectruimte</a> </li></ul>
-		</div>
-
-		<div class="f_rijtje"><ul class="overview">
-
-				<li><i class="icon-file"></i><a href="/documentatie/sinterklaasspullen">Sinterklaasspullen</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/speeltoestellen">Speeltoestellen</a>  <col-md- style="color:black;">Concept</col-md-></li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/steekwagen">Steekwagen</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/stroommeter">Stroommeter</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/tafeltennistafel">Tafeltennistafel</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/tuinhok">Tuinhok</a> </li></ul>
-		</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-					</div>
-				</div>
-
-
-
-
-					<div class="message">
-					<div class="message-header">
-						<h3>Huur en nieuwe huurders</h3>
-					</div>
-					<div class="message-body">
-
-		<div class="f_rijtje"><ul class="overview">
-
-				<li><i class="icon-file"></i><a href="/documentatie/doorverhuizen">Doorverhuizen</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/Groter-of-kleiner-wonen-in-je-huis">Groter of kleiner wonen in je huis</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/Huisbewaarderschap">Huisbewaarderschap</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/huiscontract">Huiscontract</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/huurtoeslag">Huurtoeslag</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/inkomensgrens1">Inkomensgrens</a> </li></ul>
-		</div>
-
-		<div class="f_rijtje"><ul class="overview">
-
-				<li><i class="icon-file"></i><a href="/documentatie/aanmeldformulier">Op zoek naar een nieuwe bewoner</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/opzeggen-van-de-huur">Opzeggen van de huur</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/portaal">Portaal</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/samenwerkingsovereenkomst-met-portaal">Samenwerkingsovereenkomst met Portaal</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/Samenwonen">Samenwonen</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/Tips-voor-de-gesprekken-met-kandidaten">Tips voor de gesprekken met kandidaten</a> </li></ul>
-		</div>
-					</div>
-				</div>
-
-
-
-
-					<div class="message">
-					<div class="message-header">
-						<h3>In, op en om het huis</h3>
-					</div>
-					<div class="message-body">
-		<div class="f_rijtje"><ul class="overview">
-
-				<li><i class="icon-file"></i><a href="/documentatie/afspraken-over-vuur-en-geluid-in-de-tuin">Afspraken over vuur en geluid in de tuin</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/boiler">Boiler</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/douche">Douche</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/ean-codes-van-de-huizen">EAN-codes van de huizen</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/hoofdkraan-afsluiten">Hoofdkraan afsluiten</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/inbraakpreventie">Inbraakpreventie</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/radiatoren">Radiatoren</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/rookmelders">Rookmelders</a> </li></ul>
-		</div>
-
-		<div class="f_rijtje"><ul class="overview">
-
-				<li><i class="icon-file"></i><a href="/documentatie/schuiframen-gebruiksaanwijzing">Schuiframen gebruiksaanwijzing</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/tl-buisjes">TL-buisjes</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/trappenhuis-schilderen">Trappenhuis schilderen</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/ventilatie">Ventilatie</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/verwarmingsketel">Verwarmingsketel</a>  <col-md- style="color:black;">Concept</col-md-></li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/vloerbedekking-trappenhuizen">Vloerbedekking trappenhuizen</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/wc">WC</a> </li>
-
-				<li><i class="icon-file"></i><a href="/documentatie/zonneboiler">Zonneboiler</a> </li></ul>
-		</div>
-
-					</div>
-				</div>
-
-
-
-
-					<div class="message">
-					<div class="message-header">
-						<h3>Overige</h3>
-					</div>
-					<div class="message-body">
-
-		<div class="f_rijtje"><ul class="overview">
-				<li><i class="icon-file"></i><a href="/documentatie/gegevens-oud-bewoners">Gegevens oud-bewoners</a> </li></ul>
-		</div>
-
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-4">
-
-				<div class="message">
-					<div class="message-header">
-					<h3>Laatst gewijzigd</h3>
-					</div>
-					<div class="message-body">
-					<ul class="overview">
-
-					<li><i class="icon-file"></i><a href="/documentatie/wie-doet-wat-lijst">Wie-doet-wat lijst</a></li>
-
-					<li><i class="icon-file"></i><a href="/documentatie/internetcommissie">Internetcommissie</a></li>
-
-					<li><i class="icon-file"></i><a href="/documentatie/notulen-bestuursvergadering">Notulen bestuursvergadering</a></li>
-
-					<li><i class="icon-file"></i><a href="/documentatie/samenwerkingsovereenkomst-met-portaal">Samenwerkingsovereenkomst met Portaal</a></li>
-
-					<li><i class="icon-file"></i><a href="/documentatie/rondzendmail">Rondzendmail</a></li>
-
-					<li><i class="icon-file"></i><a href="/documentatie/trappenhuis-schilderen">Trappenhuis schilderen</a></li>
-
-					<li><i class="icon-file"></i><a href="/documentatie/onderhoudswerkzaamheden-chronologisch">Onderhoudswerkzaamheden chronologisch</a></li>
-
-					<li><i class="icon-file"></i><a href="/documentatie/test1">test</a></li>
-
-					<li><i class="icon-file"></i><a href="/documentatie/boekjaar-2015">boekjaar 2015</a></li>
-
-					<li><i class="icon-file"></i><a href="/documentatie/financien">Financiën</a></li>
-
-					</ul>
-					</div>
-				</div>
-
-
-
-
-				<div class="message">
-					<div class="message-header">
-					<h3>Documentenbeheer</h3>
-					<p>Deze 10 documenten zijn als laatste bewerkt en vallen onder jou <a href="/documentatie/beheer">beheer</a>.</p>
-					</div>
-					<div class="message-body">
-					<ul class="overview">
-
-					<li><i class="icon-file"></i><a href="/documentatie/klopvaart.nl-email-adressen">Klopvaart.nl email adressen</a></li>
-
-
-
-
-
-					<li><i class="icon-file"></i><a href="/documentatie/alv-notulisten-overzicht">ALV notulisten overzicht</a></li>
-
-
-
-
-
-					<li><i class="icon-file"></i><a href="/documentatie/bakfiets">Bakfiets</a></li>
-
-
-
-
-
-					<li><i class="icon-file"></i><a href="/documentatie/draaiboek-alv">Draaiboek ALV</a></li>
-
-
-
-
-
-					<li><i class="icon-file"></i><a href="/documentatie/commissies">Commissies</a></li>
-
-
-
-
-
-					<li><i class="icon-file"></i><a href="/documentatie/vacaturelijst">Vacaturelijst</a></li>
-
-
-
-
-
-					<li><i class="icon-file"></i><a href="/documentatie/activiteiten">Activiteiten</a></li>
-
-
-
-
-
-					<li><i class="icon-file"></i><a href="/documentatie/licenties">Software Licenties</a></li>
-
-
-
-
-
-					<li><i class="icon-file"></i><a href="/documentatie/intranet-wensenlijstjes">Intranet wensenlijstjes</a></li>
-
-
-
-
-
-					<li><i class="icon-file"></i><a href="/documentatie/beamer">Beamer</a></li>
-
-								</ul>
-					</div>
-				</div>
-
-
-
-
-			</div>
-
-		</div>
-
-		</section>
-
-
-		     <!-- Footer
-		      ================================================== -->
-		      <footer class="footer">
-		        <p class="pull-right"><a href="#">Back to top</a></p>
-		        <p>Heb je vragen of opmerkingen? Laat het de webmeester weten. Mail naar <a href="mailto:webmeester@klopvaart.nl">webmeester@klopvaart.nl</a></p>
-		      </footer>
-
+		
+		<hr>
+	
+		<div class="list-group">
+		  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+		    <div class="d-flex w-100 justify-content-between">
+		      <h5 class="mb-1">Update 1</h5>
+		      <small>1 days ago</small>
 		    </div>
+		    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+		    <small>At lacinia metus felis ut turpis.</small>
+		  </a>
+		  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+		    <div class="d-flex w-100 justify-content-between">
+		      <h5 class="mb-1">Update 2</h5>
+		      <small class="text-muted">4 days ago</small>
+		    </div>
+		    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+		    <small>At lacinia metus felis ut turpis.</small>
+		  </a>
+		  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+		    <div class="d-flex w-100 justify-content-between">
+		      <h5 class="mb-1">Update 3</h5>
+		      <small class="text-muted">8 days ago</small>
+		    </div>
+		    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+		    <small>At lacinia metus felis ut turpis.</small>
+		  </a>
+		  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+		    <div class="d-flex w-100 justify-content-between">
+		      <h5 class="mb-1">Update 4</h5>
+		      <small class="text-muted">10 days ago</small>
+		    </div>
+		    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+		    <small>At lacinia metus felis ut turpis.</small>
+		  </a>
 
-		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+		</div>
+	<hr>
+		<div class="content-box content-box-info" role="content-box">
+		  <h4 class="content-box-heading">Algemeen</h4>
+		  <p class="mb-0">This is Knock Knock, the first Cohousing Intranet Wordpress Theme.</p>
+		</div>
+		<div class="content-box content-box-info" role="content-box">
+		  <h4 class="content-box-heading">Bestuur</h4>
+		  <p class="mb-0">This is Knock Knock, the first Cohousing Intranet Wordpress Theme.</p>
+		</div>
+		<div class="content-box content-box-info" role="content-box">
+		  <h4 class="content-box-heading">Commissies</h4>
+		  <p class="mb-0">This is Knock Knock, the first Cohousing Intranet Wordpress Theme.</p>
+		</div>
+		<div class="content-box content-box-info" role="content-box">
+		  <h4 class="content-box-heading">Faciliteiten</h4>
+		  <p class="mb-0">This is Knock Knock, the first Cohousing Intranet Wordpress Theme.</p>
+		</div>
+		<div class="content-box content-box-info" role="content-box">
+		  <h4 class="content-box-heading">Huur en nieuwe huurders</h4>
+		  <p class="mb-0">This is Knock Knock, the first Cohousing Intranet Wordpress Theme.</p>
+		</div>
+		<div class="content-box content-box-info" role="content-box">
+		  <h4 class="content-box-heading">In, op en om het huis</h4>
+		  <p class="mb-0">This is Knock Knock, the first Cohousing Intranet Wordpress Theme.</p>
+		</div>
+		<div class="content-box content-box-info" role="content-box">
+		  <h4 class="content-box-heading">Overige</h4>
+		  <p class="mb-0">This is Knock Knock, the first Cohousing Intranet Wordpress Theme.</p>
+		</div>
+    </div>
+    <div class="col">
+
+		<ul class="list-group">
+		  <li class="list-group-item justify-content-between">
+		    Cras justo odio
+		    <span class="badge badge-default badge-pill">14</span>
+		  </li>
+		  <li class="list-group-item justify-content-between">
+		    Dapibus ac facilisis in
+		    <span class="badge badge-default badge-pill">2</span>
+		  </li>
+		  <li class="list-group-item justify-content-between">
+		    Morbi leo risus
+		    <span class="badge badge-default badge-pill">1</span>
+		  </li>
+		</ul>
+		
+		<hr>
+
+		<div class="content-box content-box-info" role="content-box">
+		  <h4 class="content-box-heading">Laatst gewijzigd</h4>
+		  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel condimentum massa, eu egestas lectus. Morbi at tortor arcu. Nunc feugiat viverra risus nec porta. Maecenas imperdiet nec libero vitae mollis. Morbi tristique diam at risus dignissim auctor. Donec viverra diam in lectus semper vulputate. Pellentesque pretium libero id risus imperdiet egestas. Ut ultricies nibh in volutpat porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed commodo, neque at mattis congue, ligula arcu pulvinar orci, eu sodales turpis tellus mattis tellus. Etiam pretium, quam non interdum semper, nisl tellus ornare massa, at lacinia metus felis ut turpis.</p>
+		</div>
+		<div class="content-box content-box-info" role="content-box">
+		  <h4 class="content-box-heading">Documentenbeheer</h4>
+		  <p class="mb-0">This is Knock Knock, the first Cohousing Intranet Wordpress Theme.</p>
+		</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+<hr>
+<!-- FOOTER -->
+<footer>
+<p class="float-right"><a href="#">Back to top</a></p>
+<p>&copy; 2017 Knock Knock Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+
+</div><!-- /.container -->
+
+	<?php wp_footer(); ?>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
   </body>
 </html>
