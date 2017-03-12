@@ -1,7 +1,8 @@
      <!-- Footer
       ================================================== -->
       <footer class="footer">
-		      <p><?php echo get_option('footer_text'); ?></p>
+		<p><?php echo get_option('footer_text'); ?></p>
+		<p>Made with <i style="color:#D04848" class="fa fa-heart"></i> on Vancouver Island</p>
       </footer>
 
     </div><!-- /container -->
