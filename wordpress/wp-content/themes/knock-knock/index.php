@@ -1,76 +1,4 @@
-
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-  <head>
-
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Knock Knock</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
-    <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet">
-
-	<?php wp_head(); ?>
-
-  </head>
-  <body>
-
-	<div class="navbar-wrapper">
-      <div class="container">
-		<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary bg-faded">
-
-		  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon"></span>
-		  </button>
-
-		  <a class="navbar-brand" href="#">Knock Knock</a>
-
-		  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-		    <ul class="navbar-nav  mr-auto">
-		      <li class="nav-item">
-		        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="#">Posts</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="#">Agenda</a>
-		      </li>
-		      <li class="nav-item active">
-		        <a class="nav-link" href="#">Documentation</a>
-		      </li>
-		      <li class="nav-item dropdown">
-		        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Residents
-		        </a>
-		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		          <a class="dropdown-item" href="#">Action</a>
-		          <a class="dropdown-item" href="#">Another action</a>
-		          <a class="dropdown-item" href="#">Something else here</a>
-		        </div>
-		      </li>
-		    </ul>
-		    <form class="form-inline my-2 my-lg-0">
-		      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-		    </form>
-		    <ul class="navbar-nav">
-		      <li class="nav-item dropdown">
-		        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          User Profile
-		        </a>
-		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		          <a class="dropdown-item" href="#">Action</a>
-		          <a class="dropdown-item" href="#">Another action</a>
-		          <a class="dropdown-item" href="#">Something else here</a>
-		        </div>
-		      </li>
-		    </ul>
-		  </div>
-		</nav>
-      </div>
-	</div><!-- /.navbar-wrapper -->
+<?php get_header(); ?>
 	
 	<div class="jumbotron">
       <div class="container">
@@ -85,12 +13,12 @@
 	
 		<div class="card text-center">
 		  <div class="card-header">
-		    Featured
+		    Aankondiging
 		  </div>
 		  <div class="card-block">
-		    <h4 class="card-title">Special title treatment</h4>
+		    <h4 class="card-title">Algemene ledenvergadering</h4>
 		    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-		    <a href="#" class="btn btn-primary">Go somewhere</a>
+		    <a href="#" class="btn btn-primary">Ik ben er bij!</a>
 		  </div>
 		  <div class="card-footer text-muted">
 		    2 days ago
@@ -195,21 +123,4 @@
   </div>
 </div>
 
-<div class="container">
-<hr>
-<!-- FOOTER -->
-<footer>
-<p class="float-right"><a href="#">Back to top</a></p>
-<p>&copy; 2017 Knock Knock Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-</footer>
-
-</div><!-- /.container -->
-
-	<?php wp_footer(); ?>
-
-	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-
-  </body>
-</html>
+<?php get_footer(); ?>
