@@ -9,8 +9,9 @@
     <title><?php bloginfo()?></title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
+	<script src="https://use.fontawesome.com/6fe4a580f0.js"></script>
     <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet">
+
 
 	<?php wp_head(); ?>
 

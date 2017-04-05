@@ -28,6 +28,7 @@ Header
     padding-top: 90px;
     padding-bottom: 10px;
     background-color: #ED0;
+	border-radius: 0;
 }
 
 /*
@@ -46,4 +47,31 @@ Content
     border-bottom: 1px solid #eee;
     padding: 10px 0;
     position: relative;
+}
+
+.docs-list {
+    float: left;
+    padding: 0 0;
+}
+
+.docs-list ul.overview {
+    padding: 0;
+    margin: 0 0 0 0px;
+	list-style: none;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+
+.fa {
+ color: #000;	
 }
