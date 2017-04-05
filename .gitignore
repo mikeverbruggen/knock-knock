@@ -6,5 +6,4 @@
 /wordpress/wp-content/themes/*
 !/wordpress/wp-content/themes/klopvaart-intranet/
 !/wordpress/wp-content/themes/knock-knock/
-
-wordpress/wp-content/themes/knock-knock/.DS_Store
+.DS_Store
