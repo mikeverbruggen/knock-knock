@@ -1,4 +1,11 @@
 <?php
+function require_login()
+{
+    if (!is_user_logged_in()) {
+        auth_redirect();
+    }
+}
+
 function register_menus()
 {
     register_nav_menus(

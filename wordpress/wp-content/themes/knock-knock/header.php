@@ -1,16 +1,17 @@
+<?php require_login(); ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
   <head>
-	  <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><?php bloginfo()?></title>
     <script src="https://use.fontawesome.com/6fe4a580f0.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet">
-  	<?php wp_head(); ?>
+    <?php wp_head(); ?>
   </head>
   <body>
-  	<div class="navbar-wrapper">
+     <div class="navbar-wrapper">
       <div class="container">
         <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary bg-faded">
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,4 +31,4 @@
           </div>
         </nav>
       </div>
-  	</div>
+    </div>
