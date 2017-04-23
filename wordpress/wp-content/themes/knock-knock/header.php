@@ -28,6 +28,11 @@
                 'depth'          => 2,
                 'walker'         => new bootstrap_4_walker_nav_menu()
               )); ?>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo wp_logout_url(); ?>">Uitloggen</a>
+              </li>
+            </ul>
           </div>
         </nav>
       </div>

@@ -1,0 +1,12 @@
+body.login {
+  background: rgba(238, 221, 0, .4);
+}
+
+#login h1 a,
+.login h1 a {
+  background-image: url(images/logo.gif);
+  width: 320px;
+  background-size: 320px 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 30px;
+}

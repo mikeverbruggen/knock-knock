@@ -6,58 +6,61 @@ Version: 0.0.1
 Tags: bootstrap
 */
 
+
 /*
 Header
 */
 
 .navbar {
-	margin:20px 0 20px 0;
-    border-radius: 0.25rem;
+  margin: 20px 0 20px 0;
+  border-radius: 0.25rem;
 }
 
 .navbar-wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 20;
-    margin-top: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+  margin-top: 30px;
 }
 
 .jumbotron {
-    padding-top: 90px;
-    padding-bottom: 10px;
-    background-color: #ED0;
-	border-radius: 0;
+  padding-top: 90px;
+  padding-bottom: 10px;
+  background-color: #ED0;
+  border-radius: 0;
 }
+
 
 /*
 Content
 */
 
 .content-box {
-    padding: .3rem 1.25rem .6rem 1.25rem;
-    margin-bottom: 2rem;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-    border-color: rgba(0, 0, 0, 0.15);
-    color: #31708f;
+  padding: .3rem 1.25rem .6rem 1.25rem;
+  margin-bottom: 2rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  border-color: rgba(0, 0, 0, 0.15);
+  color: #31708f;
 }
+
 .content-box-heading {
-    border-bottom: 1px solid #eee;
-    padding: 10px 0;
-    position: relative;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  position: relative;
 }
 
 .docs-list {
-    float: left;
-    padding: 0 0;
+  float: left;
+  padding: 0 0;
 }
 
 .docs-list ul.overview {
-    padding: 0;
-    margin: 0 0 0 0px;
-	list-style: none;
+  padding: 0;
+  margin: 0 0 0 0px;
+  list-style: none;
 }
 
 .clearfix:after {
@@ -68,10 +71,21 @@ Content
   clear: both;
   height: 0;
 }
-* html .clearfix             { zoom: 1; } /* IE6 */
-*:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
+* html .clearfix {
+  zoom: 1;
+}
+
+
+/* IE6 */
+
+*:first-child+html .clearfix {
+  zoom: 1;
+}
+
+
+/* IE7 */
 
 .fa {
- color: #000;	
+  color: #000;
 }
