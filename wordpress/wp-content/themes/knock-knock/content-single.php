@@ -1,6 +1,6 @@
-<div class="message span8">
-	<div class="message-header">
-		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> (Content Single)</h3>
+<div class="content-box content-box-info">
+	<div class="content-box-heading">
+		<h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> (Content Single)</h5>
 	</div>
 
 	<?php if ( has_post_thumbnail() ) { ?>

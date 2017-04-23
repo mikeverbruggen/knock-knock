@@ -1,13 +1,13 @@
 
 
-	<div class="message span8">
-		<div class="message-header">
-			<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> (Content)
-				
-				<a href="<?php comments_link(); ?>">
-					<?php printf( _nx( 'One Comment', '%1$s reacties', get_comments_number(), 'comments title', 'textdomain' ), number_format_i18n(get_comments_number() ) ); ?>
-				</a>	
-			</h3>
+	<div class="content-box content-box-info">
+		<div class="content-box-heading">
+			<h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+			<small>
+			<a href="<?php comments_link(); ?>">
+				<?php printf( _nx( 'One Comment', '%1$s reacties', get_comments_number(), 'comments title', 'textdomain' ), number_format_i18n(get_comments_number() ) ); ?>
+			</a>
+			</small>
 		</div>
 		<?php if ( has_post_thumbnail() ) { ?>
 		<div class="images-body">
@@ -26,7 +26,7 @@
 			 <?php the_content(); ?>
 		</div>
 		<div class="message-footer">
-			<img src="/images/made/content/member_photos/Screen_Shot_2014-01-18_at_12.36_.54___40_40_all_3_c1.png" width="40" height="40" alt="">
+			<img src="" width="40" height="40" alt="">
 			Auteur: <a href="<?php the_permalink(); ?>"><?php the_author(); ?></a>
 			Laatste wijziging: <?php the_date(); ?> 
 		</div>

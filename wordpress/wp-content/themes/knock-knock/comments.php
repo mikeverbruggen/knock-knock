@@ -5,8 +5,8 @@
 
 
 <?php if ( have_comments() ) : ?>
-<div class="message span8">
-	<div class="message-header">
+<div class="content-box content-box-info">
+	<div class="content-box-heading">
 		<h3>
 			<?php
 			printf( _nx( 'Eén reactie op “%2$s”', '%1$s comments on “%2$s”', get_comments_number(), 'comments title'),
@@ -35,9 +35,9 @@
 		<?php endif; ?>
 
 
-<div class="message span8">
+<div class="content-box content-box-info">
 
-	<div class="message-header">
+	<div class="content-box-heading">
 		<h3>Reageren</h3>
 	</div>
 
