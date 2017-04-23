@@ -1,7 +1,5 @@
-<?php /* Template Name: Homepage */ ?>
-
 <?php get_header(); ?>
-	
+
 	<div class="jumbotron">
       <div class="container">
         <h1><?php wp_title(''); ?></h1>
@@ -9,7 +7,7 @@
     </div>
 
 <div class="container">
-	
+
   <div class="row">
     <div class="col-8">
 
@@ -26,7 +24,7 @@
 		    2 days ago
 		  </div>
 		</div>
-		
+
 		<hr>
 
 		<div class="list-group">
@@ -63,8 +61,8 @@
 		    <small>At lacinia metus felis ut turpis.</small>
 		  </a>
 
-		</div>	
-		
+		</div>
+
 		<hr>
 
 
@@ -90,7 +88,7 @@
 		    <span class="badge badge-default badge-pill">1</span>
 		  </li>
 		</ul>
-		
+
 		<hr>
 
 		<div class="content-box content-box-info" role="content-box">

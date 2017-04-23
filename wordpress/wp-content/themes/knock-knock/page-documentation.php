@@ -1,7 +1,5 @@
-<?php /* Template Name: Documentation */ ?>
-
 <?php get_header(); ?>
-	
+
 	<div class="jumbotron">
       <div class="container">
         <h1><?php wp_title(''); ?></h1>
@@ -9,10 +7,10 @@
     </div>
 
 <div class="container">
-	
+
   <div class="row">
     <div class="col-8">
-	
+
 		<div class="content-box content-box-info" role="content-box">
 		  	<h4 class="content-box-heading">Algemeen</h4>
 		  	<div class="mb-0 clearfix">
@@ -36,7 +34,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="content-box content-box-info" role="content-box">
 		  	<h4 class="content-box-heading">Algemeen</h4>
 		  	<div class="mb-0 clearfix">
@@ -60,7 +58,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="content-box content-box-info" role="content-box">
 		  	<h4 class="content-box-heading">Algemeen</h4>
 		  	<div class="mb-0 clearfix">
@@ -104,7 +102,7 @@
 		    <span class="badge badge-default badge-pill">1</span>
 		  </li>
 		</ul>
-		
+
 		<hr>
 
 		<div class="content-box content-box-info" role="content-box">
