@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php /* Template Name: Documentation */ ?>
 
 	<div class="jumbotron">
       <div class="container">

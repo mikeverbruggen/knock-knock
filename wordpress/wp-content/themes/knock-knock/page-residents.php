@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php /* Template Name: Residents */ ?>
 
 	<div class="jumbotron">
       <div class="container">
