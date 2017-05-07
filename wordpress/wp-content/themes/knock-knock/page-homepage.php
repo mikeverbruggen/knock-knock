@@ -3,7 +3,19 @@
 
 	<div class="jumbotron">
       <div class="container">
-        <h1><?php wp_title(''); ?></h1>
+        <h1> 
+	
+			<?php global $current_user;
+			      get_currentuserinfo();
+
+				if ($current_user->user_firstname) {
+					echo "Welkom " . $current_user->user_firstname;
+				} else {
+					echo "Hey aap je voornaam is nog niet ingevuld!";
+				}			      
+			?>
+	
+	</h1>
       </div>
     </div>
 
