@@ -18,7 +18,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <a class="navbar-brand" href="#"><?php bloginfo('name'); ?></a>
+            <a class="navbar-brand" href="/"><?php bloginfo('name'); ?></a>
             <?php wp_nav_menu(array(
                 'theme_location' => 'header-menu',
                 'container'      => false,
