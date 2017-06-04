@@ -1,9 +1,9 @@
 <!-- Sidebar -->
-<div class="col 4">
+<div class="span4">
 
-	<div class="content-box content-box-info">
-		<div class="content-box-heading">
-		<h3>Archief</h3>
+	<div class="message span4">
+		<div class="message-header">
+		<h3>Archives</h3>
 		</div>
 		<div class="message-body">
 			<ul class="overview">

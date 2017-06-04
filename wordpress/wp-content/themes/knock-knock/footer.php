@@ -1,19 +1,38 @@
+     <!-- Footer
+      ================================================== -->
+      <footer class="footer">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Hier komst een custom tekst</a></p>
+      </footer>
 
-<div class="container">
-<hr>
-<!-- FOOTER -->
-<footer>
-<p class="float-right"><a href="#">Back to top</a></p>
-<p>&copy;<?php echo date('Y'); ?> <?php bloginfo()?> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-</footer>
+    </div><!-- /container -->
 
-</div><!-- /.container -->
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="<?php bloginfo('template_directory');?>/js/google-code-prettify/prettify.js"></script>
+    <script src="<?php bloginfo('template_directory');?>/js/jquery.tablesorter.min.js"></script>
+    <script src="<?php bloginfo('template_directory');?>/js/bootstrap-transition.js"></script>
+    <script src="<?php bloginfo('template_directory');?>/js/bootstrap-alert.js"></script>
+    <script src="<?php bloginfo('template_directory');?>/js/bootstrap-modal.js"></script>
+    <script src="<?php bloginfo('template_directory');?>/js/bootstrap-dropdown.js"></script>
+    <script src="<?php bloginfo('template_directory');?>/js/bootstrap-scrollspy.js"></script>
+    <script src="<?php bloginfo('template_directory');?>/js/bootstrap-tab.js"></script>
+    <script src="<?php bloginfo('template_directory');?>/js/bootstrap-tooltip.js"></script>
+    <script src="<?php bloginfo('template_directory');?>/js/bootstrap-popover.js"></script>
+    <script src="<?php bloginfo('template_directory');?>/js/bootstrap-button.js"></script>
+    <script src="<?php bloginfo('template_directory');?>/js/bootstrap-collapse.js"></script>
+    <script src="<?php bloginfo('template_directory');?>/js/bootstrap-carousel.js"></script>
+    <script src="<?php bloginfo('template_directory');?>/js/bootstrap-typeahead.js"></script>
+    <script src="<?php bloginfo('template_directory');?>/js/jquery.ui.datepicker.js"></script>
+    <script src="<?php bloginfo('template_directory');?>/js/jquery.ui.datepicker-nl.js"></script>
+    <script src="<?php bloginfo('template_directory');?>/js/jquery.ui.slider.js"></script>
+    <script src="<?php bloginfo('template_directory');?>/js/datetimepicker.js"></script>
+    <script src="<?php bloginfo('template_directory');?>/js/application.js"></script>
 
 	<?php wp_footer(); ?>
-
-	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
   </body>
 </html>

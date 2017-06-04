@@ -1,39 +1,119 @@
-<?php require_login(); ?>
+
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?php bloginfo()?></title>
-    <script src="https://use.fontawesome.com/6fe4a580f0.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet">
-    <?php wp_head(); ?>
+
+   <?php wp_head(); ?>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="<?php bloginfo('template_directory');?>/asset/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php bloginfo('template_directory');?>/asset/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php bloginfo('template_directory');?>/asset/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php bloginfo('template_directory');?>/asset/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="<?php bloginfo('template_directory');?>/asset/ico/apple-touch-icon-57-precomposed.png">
+
+    <script src="<?php bloginfo('template_directory');?>/js/jquery.js"></script>
+
   </head>
-  <body>
-     <div class="navbar-wrapper">
-      <div class="container">
-        <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary bg-faded">
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <a class="navbar-brand" href="/"><?php bloginfo('name'); ?></a>
-            <?php wp_nav_menu(array(
-                'theme_location' => 'header-menu',
-                'container'      => false,
-                'menu_class'     => 'nav navbar-nav',
-                'fallback_cb'    => '__return_false',
-                'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                'depth'          => 2,
-                'walker'         => new bootstrap_4_walker_nav_menu()
-              )); ?>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="<?php echo wp_logout_url(); ?>">Uitloggen</a>
-              </li>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+	<?php if( current_user_can('editor') || current_user_can('administrator') ) {  ?> 
+
+		<div id="topNav">
+			<div>
+				<ul>
+					<li><a href="/">Klovaart Website</a> - <a href="/intranet/">Klovaart Intranet</a></li>
+				</ul>
+				<p id="userNav"><a href="<?php echo get_edit_post_link( $id, $context ); ?> ">Bewerken</a></p>
+			</div>
+		</div>
+
+
+	<?php } ?>
+
+  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top first" style=" z-index: 20;">
+      <div class="navbar-inner">
+        <div class="container">
+			<a class="brand" href="<?php bloginfo( 'wpurl' );?>"><?php echo get_bloginfo( 'name' ); ?></a>
+
+			<?php if ( is_user_logged_in() ) { ?>
+
+            <ul class="nav pull-right">
+			  <li class="dropdown">
+			    <a href="#"
+			          class="dropdown-toggle"
+			          data-toggle="dropdown">
+			          <?php echo get_option('say_hello'); ?>
+			 
+					<?php $current_user = wp_get_current_user();
+				    	echo $current_user->display_name;
+					?>
+			          <b class="caret"></b>
+			    </a>
+			    <ul class="dropdown-menu">
+				<?php /*
+	                <li><a href="/">Nog niet beschikbaar</a></li>
+	                <li><a href="/">Profiel bewerken</a></li>
+	                <li><a href="/">Wachtwoord aanpassen</a></li>
+	                <li class="divider"></li> */
+				?>
+	                <li><a href="<?php echo wp_logout_url(); ?>">Uitloggen</a></li>
+			    </ul>
+			  </li>
             </ul>
-          </div>
-        </nav>
+
+			<?php } ?>
+
+        </div>
       </div>
     </div>
+
+
+	  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top second" style="top: -5px; z-index: 10;">
+      <div class="navbar-inner">
+        <div class="container">
+
+            <ul class="nav">
+
+				<?php if ( is_user_logged_in() ) { ?>
+
+					<?php wp_list_pages( '&title_li=' ); ?>
+
+					<li class="dropdown">
+					  <a href="#"
+					        class="dropdown-toggle"
+					        data-toggle="dropdown">
+					        Bewoners
+					        <b class="caret"></b>
+					  </a>
+					  <ul class="dropdown-menu">
+							<li><a href="/bewoners/per-huis">Per huis</a></li>
+							<li><a href="/bewoners/">Fotopagina</a></li>
+							<li><a href="/bewoners/contactgegevens">Contactgegevens</a></li>
+							<li><a href="/bewoners/vraag-en-antwoord">Vraag en antwoord</a></li>
+					  </ul>
+					</li>
+
+				<?php } else { ?>
+					<li class="page_item page-item-6 current_page_item"><a href="">Je hebt hier niets te zoeken!</a></li>
+				<?php } ?>
+
+            </ul>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container page">
