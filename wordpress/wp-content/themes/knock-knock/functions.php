@@ -23,6 +23,15 @@ register_nav_menus(array(
     'footer' => 'Footer',
 ));
 
+function userName()
+{
+    global $current_user;
+    return $current_user->first_name;
+}
+
+add_shortcode('first_name', 'userName');
+
+
 // Add posttypes - generated with CPT UI
 function cptui_register_my_cpts()
 {
