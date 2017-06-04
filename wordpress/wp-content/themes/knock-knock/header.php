@@ -82,36 +82,17 @@
     ================================================== -->
     <div class="navbar navbar-fixed-top second" style="top: -5px; z-index: 10;">
       <div class="navbar-inner">
-        <div class="container">
 
-            <ul class="nav">
 
-				<?php if ( is_user_logged_in() ) { ?>
 
-					<?php wp_list_pages( '&title_li=' ); ?>
 
-					<li class="dropdown">
-					  <a href="#"
-					        class="dropdown-toggle"
-					        data-toggle="dropdown">
-					        Bewoners
-					        <b class="caret"></b>
-					  </a>
-					  <ul class="dropdown-menu">
-							<li><a href="/bewoners/per-huis">Per huis</a></li>
-							<li><a href="/bewoners/">Fotopagina</a></li>
-							<li><a href="/bewoners/contactgegevens">Contactgegevens</a></li>
-							<li><a href="/bewoners/vraag-en-antwoord">Vraag en antwoord</a></li>
-					  </ul>
-					</li>
+					<?php wp_nav_menu( array(
+					    'menu'   => 'Hoofdmenu',
+						'container_class'   => 'container',
+						'menu_class'   => 'nav'
+					) ); ?>
 
-				<?php } else { ?>
-					<li class="page_item page-item-6 current_page_item"><a href="">Je hebt hier niets te zoeken!</a></li>
-				<?php } ?>
 
-            </ul>
-
-        </div>
       </div>
     </div>
 
