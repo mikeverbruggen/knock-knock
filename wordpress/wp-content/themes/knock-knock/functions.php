@@ -17,6 +17,16 @@ add_theme_support( 'title-tag' );
 // Support Featured Images
 add_theme_support( 'post-thumbnails' );
 
+// Creat Menu for the Theme
+function register_my_menus() {
+  register_nav_menus(
+    array(
+      'menu' => __( 'Menu' ),
+    )
+  );
+}
+add_action( 'init', 'register_my_menus' );
+
 // Wordpress balk verbergen voor ingelogde gebruikers
 if (!current_user_can(‘edit_posts’)) {
 show_admin_bar(false);
