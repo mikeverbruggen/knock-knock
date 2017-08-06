@@ -13,3 +13,6 @@ This repository contains the development environment and the WordPress theme for
   + Advanced Custom Fields PRO
   + Custom Post Type UI
 - Import fields: Extra velden -> Tools -> Selecteer bestand: [acf-import.json](acf-import.json)
+- Create new pages: 'Home', 'Agenda', 'Bewoners', 'Documentatie' with accompanying templates
+- Set landing page: Instellingen -> Lezen -> Statische pagina -> Voorpagina: 'Home'
+- Setup menu structure: Weergave -> Menu's: 'Home', 'Agenda', 'Bewoners', 'Documentatie'
