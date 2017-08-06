@@ -12,3 +12,4 @@ This repository contains the development environment and the WordPress theme for
 - Install plugins:
   + Advanced Custom Fields PRO
   + Custom Post Type UI
+- Import fields: Extra velden -> Tools -> Selecteer bestand: [acf-import.json](acf-import.json)
