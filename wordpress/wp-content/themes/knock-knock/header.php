@@ -64,9 +64,9 @@
 	                <li><a href="/">Nog niet beschikbaar</a></li>
 	                <li><a href="/">Profiel bewerken</a></li>
 	                <li><a href="/">Wachtwoord aanpassen</a></li>
-	                <li class="divider"></li> */
-				?>
-	                <li><a href="<?php echo wp_logout_url(); ?>">Uitloggen</a></li>
+	                <li class="divider"></li>
+				*/ ?>
+	                <li><a href="<?php echo wp_logout_url( home_url() ); ?>">Uitloggen</a></li>
 			    </ul>
 			  </li>
             </ul>
@@ -82,17 +82,21 @@
     ================================================== -->
     <div class="navbar navbar-fixed-top second" style="top: -5px; z-index: 10;">
       <div class="navbar-inner">
+        <div class="container">
 
+				<?php if ( is_user_logged_in() ) { ?>
+					
+		            <?php wp_nav_menu(array( 
+		                'menu'     	=> 'Hoofd',
+		                'menu_class'        => 'nav',
+						'container' => false,
+		                'show_home'         => '1'
+		                ));
+		            ?>
 
+				<?php } ?>
 
-
-					<?php wp_nav_menu( array(
-					    'menu'   => 'Hoofdmenu',
-						'container_class'   => 'container',
-						'menu_class'   => 'nav'
-					) ); ?>
-
-
+        </div>
       </div>
     </div>
 

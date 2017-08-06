@@ -558,20 +558,25 @@ line-height: 1;
 
 /* Custom Styles - Documentatie
 -------------------------------------------------- 
-
+*/
 
 #documentation .overview li {
 	float: left;
-	width: 205px;
-}*/
-
-#documentation .overview ul {
-	padding: 0 0 15px 0;
+	width: 250px;
 }
 
-.f_rijtje {
-	float: left;
-	width: 290px;
+#documentation .overview li:nth-child(even) {
+	margin-left:40px;;
+}
+
+#documentation ul.overview {
+	padding: 0 0 12px 0;
+}
+
+#documentation ul.overview::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 

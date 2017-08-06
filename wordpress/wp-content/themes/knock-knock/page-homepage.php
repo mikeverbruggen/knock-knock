@@ -1,23 +1,15 @@
 <?php /* Template Name: Homepage */ ?>
 <?php get_header(); ?>
 
-
 <?php if ( is_user_logged_in() ) { ?>
 
-      <!-- Main hero unit for a primary marketing message or call to action -->
-
-
-<?php /*        
-		<h2>Hoi <?php $current_user = wp_get_current_user(); echo $current_user->first_name; ?></h2>
-*/ ?>
-		
 		<?php if ( have_posts() ) :  ?>
 
-      <div class="hero-unit-home">
+	      <div class="hero-unit-home">
 			
-		<?php while ( have_posts() ) : the_post(); the_content(); endwhile;  ?>
+			<?php while ( have_posts() ) : the_post(); the_content(); endwhile;  ?>
 			
-	  </div>		
+		  </div>		
 			
 		<?php endif; ?>
 		
@@ -36,7 +28,7 @@
 			<div class="stream-body">
 
 				<?php $posts = get_posts(array(
-					'posts_per_page'	=> -1,
+					'posts_per_page'	=> 25,
 			     	'orderby'     => 'modified',
 		            'order' => 'DESC',
 					'post_type'			=> 'any'
@@ -98,6 +90,7 @@
 							<?php } ?>
 
 						<?php } ?>
+
 					<?php endforeach; ?>
 
 <!-- hier -->
@@ -125,13 +118,13 @@
 
 
 	// find date time in 7 days
-	$time_next_week = strtotime('+14 day', $time_now);
+	$time_next_week = strtotime('+14 week', $time_now);
 	$date_next_week = date('Y-m-d H:i:s', $time_next_week);
 
 
 	// query events
 	$posts = get_posts(array(
-		'posts_per_page'	=> -1,
+		'posts_per_page'	=> 100,
 		'post_type'			=> 'agenda',
 		'meta_query' 		=> array(
 			array(
@@ -196,53 +189,70 @@
 		<?php endif;    /* Einde Agenda */  ?>
 
 
-			<?php /* Start Nieuwe bewoners */  
+		<?php /* Start Nieuwe bewoners */  
+			$args = array(
+			'number' => 17,
+	        'order'     => 'DESC',
+	        'meta_key' => 'bewoner_sinds',
+	        'orderby'   => 'meta_value', //or 'meta_value_num'
+				'meta_query' => array(
+					'relation' => 'AND',
+						array(
+							'key'     => 'status_in_expressionengine',
+							'value'   => 'Ingeschreven',
+				 			'compare' => '='
+						)
+				)
+			 );
+			$wp_user_query = new WP_User_Query( $args );
 
-			$posts = get_posts(array(
-				'posts_per_page'	=> -1,
-	            'order' => 'DESC',
-				'post_type'			=> 'bewoners',
-				'order'				=> 'DESC',
-				'orderby'			=> 'meta_value',
-				'meta_key'			=> 'resident_date_since',
-				'meta_type'			=> 'DATETIME'
-			));
+			// Get the results
+			$authors = $wp_user_query->get_results();
 
-			if( $posts ): ?>
+			// Check for results
+			if ( ! empty( $authors ) ) { ?>
 
-			<div class="message span4">
-				<div class="message-header">
-				<h3>Nieuwe bewoners</h3>
-				</div>
-				<div class="message-body">
-
-				<?php foreach( $posts as $post ): setup_postdata( $post ); ?>
-
-					<div class="float-member-home first">
-					
-					<div class="member-image">
-						<img src="<?php the_field( 'resident_profile_image' ); ?>" width="40" height="40" alt="" />
-					</div>
-					<div class="member-details">
-					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
-					<div class="member-details-meta"><?php the_field( 'resident_date_since' ); ?> - <span><?php the_field( 'resident_unit' ); ?></span></div>
-					</div>
-					</div>
-		
-				<?php endforeach; ?>
-
-				</div>
+		<div class="message span4">
+			<div class="message-header">
+			<h3>Nieuwe bewoners</h3>
 			</div>
+			<div class="message-body">
 
-				<?php wp_reset_postdata(); ?>
+			    <?php // loop through each author
+			    foreach ( $authors as $author ) {
+			        // get all the user's data
+			        $author_info = get_userdata( $author->ID );
+					$phone = get_field('resident_phone', $author_info); ?>
 
-			<?php endif;    /* Einde Nieuwe bewoners */  ?>
+				<div class="float-member-home first">
+				
+				<div class="member-image">
+					<img src="<?php the_field( 'resident_profile_image', $author_info ); ?>" width="40" height="40" alt="" />
+				</div>
+				<div class="member-details">
+				<?php echo $author_info->first_name; ?> <?php echo $author_info->last_name; ?><br />
+				<div class="member-details-meta"><?php the_field( 'bewoner_sinds', $author_info ); ?> - <span><?php the_field( 'resident_unit', $author_info ); ?></span></div>
+				</div>
+				</div>
+	
+					<?php } ?>
 
+			</div>
+		</div>
+
+		<?php } else {
+		    echo 'Geen bewoners gevonden';
+		}
+		/* Einde Nieuwe bewoners */  ?>
+
+		<div>
+
+		</div>
+		
        </div>
       </div>
 
 	<?php } else { ?>
-
 	<?php } ?>
 
 <?php get_footer(); ?>

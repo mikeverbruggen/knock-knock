@@ -5,17 +5,22 @@
     <h1><?php the_title(); ?></h1>
   </div>
 
-<?php echo do_shortcode( '[wpuf_form id="64"]' ); ?>
-
   <div class="row">
     <div class="span3 member-profile-image">
-		<img src="<?php the_field( 'resident_profile_image' ); ?>" width="220" height="220" alt="" />
+		<?php echo types_render_field("afbeelding", array(
+			'raw' => 'false',
+			'width' => '220',
+			'height' => '220'
+			)); ?>
   	</div>
 
     <div class="span6">
 
       <h3>Introductie</h3>
-				<p>... heeft zijn introductie nog niet ingevuld. :(</p>
+				<p><?php echo types_render_field("datum", array(
+					'raw' => 'false',
+					'format' => 'Y/m/d g:i:s A'
+					)); ?></p>
 		
 
       <h3>Waar word ik blij van?</h3>
@@ -36,13 +41,17 @@
         </thead>
         <tbody>
           <tr>
-            <td><a href="tel:<?php the_field( 'resident_phone' ); ?>"><?php the_field( 'resident_phone' ); ?></a></td>
+            <td><?php echo types_render_field("telefoon", array(
+					'raw' => 'false'
+					)); ?></a></td>
           </tr>
           <tr>
             <td><?php the_field( 'resident_unit' ); ?></td>
           </tr>
           <tr>
-            <td><a href="<?php the_field( 'resident_email' ); ?>"><?php the_field( 'resident_email' ); ?></a></td>
+            <td>	<?php echo types_render_field("email", array(
+					'raw' => 'false'
+					)); ?></td>
           </tr>
           <tr>
 			<td>
@@ -57,32 +66,6 @@
   	</div>
 
   </div>
-
-<br><br>
-
-
-<?php get_header(); ?>
-
-	<div id="primary">
-		<div id="content" role="main">
-
-			<?php /* The loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				
-				<h1><?php the_title(); ?></h1>
-				
-				<?php the_content(); ?>
-				
-				<p>My custom field: <?php the_field('my_custom_field'); ?></p>
-				
-				<?php acf_form(); ?>
-
-			<?php endwhile; ?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-
 
 <br><br>
 
