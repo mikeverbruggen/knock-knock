@@ -1,4 +1,4 @@
-<?php /* Template Name: Bewonders */ ?>
+<?php /* Template Name: Bewoners */ ?>
 <?php get_header(); ?>
 
 <?php if ( is_user_logged_in() ) { ?>
