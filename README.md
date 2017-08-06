@@ -7,5 +7,8 @@ This repository contains the development environment and the WordPress theme for
 - Download and install [Docker](https://www.docker.com/community-edition#/download)
 - Clone this repo `git clone git@github.com:mikeverbruggen/klopvaart-intranet.git && cd klopvaart-intranet`
 - Run `docker-compose up`
-- Visit [http://localhost:8080](http://localhost:8080) for WordPress  
+- Visit [http://localhost:8080](http://localhost:8080) for WordPress
 - Visit [http://localhost:8081](http://localhost:8081) for phpMyAdmin
+- Install plugins:
+  + Advanced Custom Fields PRO
+  + Custom Post Type UI
