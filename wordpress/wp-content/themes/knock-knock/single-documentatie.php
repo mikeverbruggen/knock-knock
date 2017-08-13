@@ -55,37 +55,46 @@
 				<?php wp_reset_postdata(); ?>
 			<?php endif; // End document relations ?>
 
-			<?php // Document relations
-				$relations = get_posts(array(
-					'post_type' => 'documentatie',
-					'meta_query' => array(
-						array(
-							'key' => 'relatie',
-							'value' => '"' . get_the_ID() . '"',
-							'compare' => 'LIKE'
-						)
-					)
+			<?php /* Related items */  			
+
+				$relatedpostid = get_the_ID();
+				// query events
+				$posts = get_posts(array(
+				'posts_per_page'	=> 100,
+				'post_type'			=> 'documentatie',
+				'orderby' => 'title',
+				'order'   => 'ASC'
 				));
-				echo var_dump($relations);
-				if( $relations ): ?>
-					<div class="message span4">
-						<div class="message-header">
-							<h3>Gerelateerde Documenten</h3>
-						</div>
-						<div class="message-body">
-							<ul class="overview">
-								<?php foreach( $relations as $relation ): ?>
-									<li>
-										<i class="icon-file"></i>
-										<a href="<?php echo get_permalink( $relation->ID ); ?>">
-											<?php echo get_the_title( $relation->ID ); ?>
-										</a>
-									</li>
-								<?php endforeach; ?>
-							</ul>
-						</div>
+
+				if( $posts ): ?>
+
+				<div class="message span4">
+					<div class="message-header">
+					<h3>Gerelateerde Documenten <? echo $relatedpostid ?></h3>
 					</div>
-			<?php endif; ?>
+					<div class="message-body">
+						<ul class="overview">
+
+						<?php foreach( $posts as $post ): setup_postdata( $post ); ?>
+
+							<?php if ( get_field( 'relatie' ) == $relatedpostid ) { ?>
+
+						        <li>
+									<i class="icon-file"></i>
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br/>
+								</li>
+						
+							<?php } ?>
+
+						<?php endforeach; ?>
+
+						</ul>
+					</div>
+				</div>
+
+				<?php wp_reset_postdata(); ?>
+
+			<?php endif; /* End Related */  ?>
 
 			<?php // Download overzicht
 			if ( have_rows( 'downloads' ) ) : ?>
@@ -116,6 +125,46 @@
 			<?php endif; // Einde Download overzicht ?>
 
 
+			<?php /* Items from the same category */  			
+
+				$category = get_field( 'categorie' );	
+				// query events
+				$posts = get_posts(array(
+				'posts_per_page'	=> 100,
+				'post_type'			=> 'documentatie',
+				'orderby' => 'title',
+				'order'   => 'ASC'
+				));
+
+				if( $posts ): ?>
+
+				<div class="message span4">
+					<div class="message-header">
+					<h3>Andere documenten in de categorie: <?php the_field( 'categorie' ); ?></h3>
+					</div>
+					<div class="message-body">
+						<ul class="overview">
+
+						<?php foreach( $posts as $post ): setup_postdata( $post ); ?>
+
+							<?php if ( get_field( 'categorie' ) == $category ) { ?>
+
+						        <li>
+									<i class="icon-file"></i>
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br/>
+								</li>
+						
+							<?php } ?>
+
+						<?php endforeach; ?>
+
+						</ul>
+					</div>
+				</div>
+
+				<?php wp_reset_postdata(); ?>
+
+			<?php endif; /* Einde Categorie */  ?>
 
 		</div>
 
