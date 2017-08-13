@@ -49,7 +49,12 @@
 						<?php if ( get_post_type( get_the_ID() ) == 'documentatie' ) { ?>
 							<div class="stream-item">
 								<div class="stream-item-body small">
-										<i class="icon-file"></i> Het document <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> is aangepast op <?php the_modified_date(''); ?> om <?php the_modified_date('H:i'); ?>
+										<i class="icon-file"></i> Het document <a href="<?php the_permalink(); ?>">
+										<?php 
+										$title = get_the_title();
+										echo mb_strimwidth($title, 0, 40, '...');
+										?>
+										</a> is aangepast op <?php the_modified_date('j F'); ?> om <?php the_modified_date('H:i'); ?>
 								</div>
 							</div>
 						<?php } ?>

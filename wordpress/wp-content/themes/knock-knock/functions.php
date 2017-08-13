@@ -11,6 +11,14 @@ function knock_knock_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'knock_knock_scripts' );
 
+// Creat shortcode for first name
+function userName() {
+    global $current_user;
+    return $current_user->first_name;
+}
+
+add_shortcode('user_firstname', 'userName');
+
 // WordPress Titles
 add_theme_support( 'title-tag' );
 

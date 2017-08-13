@@ -228,7 +228,8 @@
 	<div class="span4">
 		
 		<div class="alert alert-info">
-		  Make this dynamic!!!
+			<h3>Ter info</h3>
+			<?php the_content(); ?>
 		</div>
 
 	</div>
