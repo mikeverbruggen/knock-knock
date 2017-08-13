@@ -228,7 +228,7 @@
 	<div class="span4">
 
 		<div class="alert alert-info">
-			<h3>Ter infos</h3>
+			<h3>Ter info</h3>
 			<?php the_content(); ?>
 		</div>
 
