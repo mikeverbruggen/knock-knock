@@ -23,7 +23,7 @@
 
 				<div class="message-footer">
 				<img src="<?php the_field( 'resident_profile_image', 'user_'. $post->post_author ); ?>" width="40" height="40" alt="" />
-				<?php echo the_author_firstname( $post->post_author ); ?> is beheerder van dit document. - 
+				<?php echo the_author_firstname( $post->post_author ); ?> is beheerder van dit document. -
 
 				<?php if ( get_the_modified_date() == get_the_date() ) {  /* Als het bericht nieuw is */  ?>
 					 Aangemaakt op <?php the_modified_date(''); ?> om <?php the_modified_date('H:i'); ?>
@@ -37,71 +37,55 @@
 		</div>
 
 		<div class="span4">
-		<?php // Document relations
-			$post = get_field( 'relatie' );
-			if ( $post ):
-				setup_postdata( $post ); ?>
+			<?php // Document relations
+				$post = get_field( 'relatie' );
+				if ( $post ):
+					setup_postdata( $post ); ?>
 
-				<div class="message span4">
-				<div class="message-header">
-				<h3>Dit document hoort bij</h3>
-				</div>
+					<div class="message span4">
+						<div class="message-header">
+							<h3>Dit document hoort bij</h3>
+						</div>
+						<div class="message-body">
+							<ul class="overview">
+								<li><i class="icon-file"></i><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+							</ul>
+						</div>
+					</div>
+				<?php wp_reset_postdata(); ?>
+			<?php endif; // End document relations ?>
 
-				<div class="message-body">
-					<ul class="overview">
-						<li><i class="icon-file"></i><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-					</ul>
-				</div>
-
-			</div>
-			<?php wp_reset_postdata(); ?>
-		<?php else : ?>
-		<?php // no rows found ?>
-		<?php endif; // End document relations ?>
-
-
-		<div class="message span4">
-		<div class="message-header">
-		<h3>Gerelateerde Documenten</h3>
-		</div>
-		<div class="message-body">
-		<ul class="overview">
-
-				<?php 
-
-				/*
-				*  Query posts for a relationship value.
-				*  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
-				*/
-
-				$doctors = get_posts(array(
+			<?php // Document relations
+				$relations = get_posts(array(
 					'post_type' => 'documentatie',
 					'meta_query' => array(
 						array(
-							'key' => 'relatie', // name of custom field
-							'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+							'key' => 'relatie',
+							'value' => '"' . get_the_ID() . '"',
 							'compare' => 'LIKE'
 						)
 					)
 				));
-
-				?>
-				<?php if( $relatie ): ?>
-					<ul>
-					<?php foreach( $relatie as $relatie ): ?>
-
-						<li>
-							<a href="<?php echo get_permalink( $relatie->ID ); ?>">
-								<?php echo get_the_title( $relatie->ID ); ?>
-							</a>
-						</li>
-					<?php endforeach; ?>
-					</ul>
-				<?php endif; ?>
-			
-			</ul>
-			</div>
-			</div>
+				echo var_dump($relations);
+				if( $relations ): ?>
+					<div class="message span4">
+						<div class="message-header">
+							<h3>Gerelateerde Documenten</h3>
+						</div>
+						<div class="message-body">
+							<ul class="overview">
+								<?php foreach( $relations as $relation ): ?>
+									<li>
+										<i class="icon-file"></i>
+										<a href="<?php echo get_permalink( $relation->ID ); ?>">
+											<?php echo get_the_title( $relation->ID ); ?>
+										</a>
+									</li>
+								<?php endforeach; ?>
+							</ul>
+						</div>
+					</div>
+			<?php endif; ?>
 
 			<?php // Download overzicht
 			if ( have_rows( 'downloads' ) ) : ?>
@@ -130,7 +114,7 @@
 			<?php else : ?>
 			<?php // no rows found ?>
 			<?php endif; // Einde Download overzicht ?>
-	
+
 
 
 		</div>
