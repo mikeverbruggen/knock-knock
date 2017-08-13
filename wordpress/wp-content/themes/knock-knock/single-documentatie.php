@@ -37,15 +37,36 @@
 		</div>
 
 		<div class="span4">
+		<?php // Document relations
+			$post = get_field( 'relatie' );
+			if ( $post ):
+				setup_postdata( $post ); ?>
 
-			<div class="message span4">
-			<div class="message-header">
-			<h3>Gerelateerde Documenten</h3>
+				<div class="message span4">
+				<div class="message-header">
+				<h3>Dit document hoort bij</h3>
+				</div>
+
+				<div class="message-body">
+					<ul class="overview">
+						<li><i class="icon-file"></i><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+					</ul>
+				</div>
+
 			</div>
-			<div class="message-body">
-			<ul class="overview">
+			<?php wp_reset_postdata(); ?>
+		<?php else : ?>
+		<?php // no rows found ?>
+		<?php endif; // End document relations ?>
 
-			
+
+		<div class="message span4">
+		<div class="message-header">
+		<h3>Gerelateerde Documenten</h3>
+		</div>
+		<div class="message-body">
+		<ul class="overview">
+
 				<?php 
 
 				/*
@@ -81,8 +102,6 @@
 			</ul>
 			</div>
 			</div>
-
-
 
 			<?php // Download overzicht
 			if ( have_rows( 'downloads' ) ) : ?>

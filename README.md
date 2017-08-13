@@ -16,3 +16,4 @@ This repository contains the development environment and the WordPress theme for
 - Create new pages: 'Home', 'Agenda', 'Bewoners', 'Documentatie' with accompanying templates
 - Set landing page: Instellingen -> Lezen -> Statische pagina -> Voorpagina: 'Home'
 - Setup menu structure: Weergave -> Menu's: 'Home', 'Agenda', 'Bewoners', 'Documentatie'
+- Import All Import templates: [all-import-templates.txt](all-import-templates.txt)
