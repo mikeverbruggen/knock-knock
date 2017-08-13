@@ -5,7 +5,7 @@
 
 <section id="documentation">
 
-	<div class="page-header">		
+	<div class="page-header">
 		<h1>Documentatie</h1>
 	</div>
 
@@ -30,9 +30,9 @@
 					)); if( $posts ): ?>
 
 					<?php foreach( $posts as $post ): setup_postdata( $post ); ?>
-						
+
 						<li><i class="icon-file"></i><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> </li>
-						
+
 						<?php endforeach; ?>
 						<?php wp_reset_postdata(); ?>
 
@@ -60,9 +60,9 @@
 					)); if( $posts ): ?>
 
 					<?php foreach( $posts as $post ): setup_postdata( $post ); ?>
-						
+
 						<li><i class="icon-file"></i><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> </li>
-						
+
 						<?php endforeach; ?>
 						<?php wp_reset_postdata(); ?>
 
@@ -90,9 +90,9 @@
 					)); if( $posts ): ?>
 
 					<?php foreach( $posts as $post ): setup_postdata( $post ); ?>
-						
+
 						<li><i class="icon-file"></i><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> </li>
-						
+
 						<?php endforeach; ?>
 						<?php wp_reset_postdata(); ?>
 
@@ -120,9 +120,9 @@
 					)); if( $posts ): ?>
 
 					<?php foreach( $posts as $post ): setup_postdata( $post ); ?>
-						
+
 						<li><i class="icon-file"></i><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> </li>
-						
+
 						<?php endforeach; ?>
 						<?php wp_reset_postdata(); ?>
 
@@ -150,9 +150,9 @@
 					)); if( $posts ): ?>
 
 					<?php foreach( $posts as $post ): setup_postdata( $post ); ?>
-						
+
 						<li><i class="icon-file"></i><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> </li>
-						
+
 						<?php endforeach; ?>
 						<?php wp_reset_postdata(); ?>
 
@@ -180,9 +180,9 @@
 					)); if( $posts ): ?>
 
 					<?php foreach( $posts as $post ): setup_postdata( $post ); ?>
-						
+
 						<li><i class="icon-file"></i><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> </li>
-						
+
 						<?php endforeach; ?>
 						<?php wp_reset_postdata(); ?>
 
@@ -210,9 +210,9 @@
 					)); if( $posts ): ?>
 
 					<?php foreach( $posts as $post ): setup_postdata( $post ); ?>
-						
+
 						<li><i class="icon-file"></i><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> </li>
-						
+
 						<?php endforeach; ?>
 						<?php wp_reset_postdata(); ?>
 
@@ -226,9 +226,9 @@
 	</div>
 
 	<div class="span4">
-		
+
 		<div class="alert alert-info">
-			<h3>Ter info</h3>
+			<h3>Ter infos</h3>
 			<?php the_content(); ?>
 		</div>
 
