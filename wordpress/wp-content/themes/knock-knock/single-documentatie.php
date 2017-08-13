@@ -70,7 +70,7 @@
 
 				<div class="message span4">
 					<div class="message-header">
-					<h3>Gerelateerde Documenten <? echo $relatedpostid ?></h3>
+					<h3>Gerelateerde Documenten</h3>
 					</div>
 					<div class="message-body">
 						<ul class="overview">
