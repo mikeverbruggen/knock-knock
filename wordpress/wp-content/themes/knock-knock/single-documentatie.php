@@ -45,10 +45,44 @@
 			<div class="message-body">
 			<ul class="overview">
 
-			<li><i class="icon-file"></i><a href=".">.</a></li>
+			
+				<?php 
+
+				/*
+				*  Query posts for a relationship value.
+				*  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
+				*/
+
+				$doctors = get_posts(array(
+					'post_type' => 'documentatie',
+					'meta_query' => array(
+						array(
+							'key' => 'relatie', // name of custom field
+							'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+							'compare' => 'LIKE'
+						)
+					)
+				));
+
+				?>
+				<?php if( $relatie ): ?>
+					<ul>
+					<?php foreach( $relatie as $relatie ): ?>
+
+						<li>
+							<a href="<?php echo get_permalink( $relatie->ID ); ?>">
+								<?php echo get_the_title( $relatie->ID ); ?>
+							</a>
+						</li>
+					<?php endforeach; ?>
+					</ul>
+				<?php endif; ?>
+			
 			</ul>
 			</div>
 			</div>
+
+
 
 			<?php // Download overzicht
 			if ( have_rows( 'downloads' ) ) : ?>
