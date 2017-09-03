@@ -79,7 +79,7 @@ function cptui_register_my_cpts() {
 		"hierarchical" => false,
 		"rewrite" => array( "slug" => "documentatie", "with_front" => true ),
 		"query_var" => true,
-		"supports" => array( "title", "editor", "thumbnail" ),
+		"supports" => array( "title", "editor", "thumbnail","author" ),
 	);
 
 	register_post_type( "documentatie", $args );
