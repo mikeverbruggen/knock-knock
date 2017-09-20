@@ -1,3 +1,4 @@
+<?php require_login(); ?>
 <?php get_header(); ?>
 
 <section id="grid-system">
@@ -9,11 +10,11 @@
 	<div class="row">
 		<!-- Content -->
 		<div class="span8">
-			
+
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
 
 			get_template_part( 'content-single', get_post_format() );
-			
+
 			if ( comments_open() || get_comments_number() ) :
 			  comments_template();
 			endif;

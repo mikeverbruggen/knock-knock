@@ -1,7 +1,6 @@
 <?php /* Template Name: Agenda */ ?>
+<?php require_login(); ?>
 <?php get_header(); ?>
-
-<?php if ( is_user_logged_in() ) { ?>
 
 <section id="grid-system">
   <div class="page-header">
@@ -28,7 +27,7 @@
 
 			<div class="message-footer">
 			<img src="<?php the_field( 'resident_profile_image', 'user_'. $post->post_author ); ?>" width="40" height="40" alt="" />
-			Organisator: <?php echo the_author_firstname( $post->post_author ); ?> <?php echo the_author_lastname( $post->post_author ); ?> - 
+			Organisator: <?php echo the_author_firstname( $post->post_author ); ?> <?php echo the_author_lastname( $post->post_author ); ?> -
 
 			<?php if ( get_the_modified_date() == get_the_date() ) {  /* Als het bericht nieuw is */  ?>
 				 Aangemaakt op <?php the_modified_date(''); ?> om <?php the_modified_date('H:i'); ?>
@@ -42,7 +41,7 @@
 			<?php wp_reset_postdata(); ?>
 
 		<?php endif;    /* Einde Agenda */  ?>
-		
+
     </div>
 
 	<div class="span4">
@@ -50,14 +49,11 @@
 		<div class="alert alert-info">
 		  This is a dummy tekst.
 		</div>
-		
+
 	</div>
 </div>
 
 
 </section>
-
-<?php } else { ?>
-<?php } ?>
 
 <?php get_footer(); ?>

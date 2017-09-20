@@ -1,4 +1,5 @@
 <?php /* Template Name: Bewoners Fotos */ ?>
+<?php require_login(); ?>
 <?php get_header(); ?>
 
 <section id="grid-system">
@@ -53,7 +54,7 @@
 
 
 
-     
+
 
 
 

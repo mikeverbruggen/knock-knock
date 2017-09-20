@@ -1,7 +1,6 @@
 <?php /* Template Name: Bewoners */ ?>
+<?php require_login(); ?>
 <?php get_header(); ?>
-
-<?php if ( is_user_logged_in() ) { ?>
 
 <section id="tables">
   <div class="page-header">
@@ -45,7 +44,7 @@
 			          </tr>
 			        </thead>
 			        <tbody>
-				
+
 				    <?php // loop through each author
 				    foreach ( $authors as $author ) {
 				        // get all the user's data
@@ -69,18 +68,15 @@
 				    echo 'Geen bewoners gevonden';
 				}
 			?>
-     
 
-	
-     
+
+
+
         </tbody>
       </table>
 
     </div>
   </div><!-- /row -->
 </section>
-
-<?php } else { ?>
-<?php } ?>
 
 <?php get_footer(); ?>

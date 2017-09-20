@@ -1,7 +1,6 @@
 <?php /* Template Name: Documentatie */ ?>
+<?php require_login(); ?>
 <?php get_header(); ?>
-
-<?php if ( is_user_logged_in() ) { ?>
 
 <section id="documentation">
 
@@ -236,8 +235,5 @@
 </div>
 
 </section>
-
-<?php } else { ?>
-<?php } ?>
 
 <?php get_footer(); ?>

@@ -11,6 +11,13 @@ function knock_knock_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'knock_knock_scripts' );
 
+function require_login()
+{
+	if (!is_user_logged_in()) {
+		auth_redirect();
+	}
+}
+
 // Creat shortcode for first name
 function userName() {
     global $current_user;
@@ -37,7 +44,7 @@ add_action( 'init', 'register_my_menus' );
 
 // Wordpress balk verbergen voor ingelogde gebruikers
 if (!current_user_can(‘edit_posts’)) {
-show_admin_bar(false);
+ show_admin_bar(false);
 }
 
 // Creat Post Types for Knock Knock

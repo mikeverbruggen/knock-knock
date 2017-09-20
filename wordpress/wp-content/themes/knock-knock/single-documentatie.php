@@ -1,6 +1,5 @@
+<?php require_login(); ?>
 <?php get_header(); ?>
-
-<?php if ( is_user_logged_in() ) { ?>
 
 <?php /* The loop */ ?>
 <?php while ( have_posts() ) : the_post(); ?>
@@ -55,7 +54,7 @@
 				<?php wp_reset_postdata(); ?>
 			<?php endif; // End document relations ?>
 
-			<?php /* Related items */  			
+			<?php /* Related items */
 
 				$relatedpostid = get_the_ID();
 				// query events
@@ -83,7 +82,7 @@
 									<i class="icon-file"></i>
 									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br/>
 								</li>
-						
+
 							<?php } ?>
 
 						<?php endforeach; ?>
@@ -125,9 +124,9 @@
 			<?php endif; // Einde Download overzicht ?>
 
 
-			<?php /* Items from the same category */  			
+			<?php /* Items from the same category */
 
-				$category = get_field( 'categorie' );	
+				$category = get_field( 'categorie' );
 				// query events
 				$posts = get_posts(array(
 				'posts_per_page'	=> 100,
@@ -153,7 +152,7 @@
 									<i class="icon-file"></i>
 									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br/>
 								</li>
-						
+
 							<?php } ?>
 
 						<?php endforeach; ?>
@@ -173,8 +172,5 @@
 </section>
 
 <?php endwhile; ?>
-
-<?php } else { ?>
-<?php } ?>
 
 <?php get_footer(); ?>

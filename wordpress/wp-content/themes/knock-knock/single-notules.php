@@ -1,3 +1,4 @@
+<?php require_login(); ?>
 <?php get_header(); ?>
 
 <section id="bewoners">
@@ -21,14 +22,14 @@
 					'raw' => 'false',
 					'format' => 'Y/m/d g:i:s A'
 					)); ?></p>
-		
+
 
       <h3>Waar word ik blij van?</h3>
 				<p>... heeft nog niet laten weten waar hij blij van wordt. :(</p>
-		
+
       <h3>Waar word jij graag voor uitgenodigd?</h3>
 				<p>... heeft nog niet laten weten waar hij graag voor uitgenodigd wordt. :(</p>
-		
+
   	</div>
 
     <div class="span3">
@@ -69,7 +70,7 @@
 
 <br><br>
 
-<?php /* Start Nieuwe bewoners */  
+<?php /* Start Nieuwe bewoners */
 
 $posts = get_posts(array(
 	'posts_per_page'	=> -1,

@@ -1,3 +1,4 @@
+<?php require_login(); ?>
 <?php get_header(); ?>
 
 <section id="grid-system">
@@ -9,7 +10,7 @@
 	<div class="row">
 		<!-- Content -->
 		<div class="span12">
-			
+
 		<?php while ( have_posts() ) : the_post(); the_content(); endwhile;  ?>
 
 		</div>
