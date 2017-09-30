@@ -14,7 +14,11 @@
 
 			<div class="message span8">
 				<div class="message-header">
-					<h3><?php the_title(); ?> <small></small></h3>
+					<h3><?php the_title(); ?>
+						<small>
+							 <?php edit_post_link( $link, $before, $after, $id, $class ); ?> 
+						</small>
+					</h3>
 				</div>
 				<div class="message-body">
 						<?php the_content(); ?>
