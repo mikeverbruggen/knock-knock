@@ -14,10 +14,10 @@
 
 			<div class="message span8">
 				<div class="message-header">
+					<span class="comment-count">
+						 <?php edit_post_link( $link, $before, $after, $id, $class ); ?> 
+					</span>
 					<h3><?php the_title(); ?>
-						<span class="comment-count">
-							 <?php edit_post_link( $link, $before, $after, $id, $class ); ?> 
-						</span>
 					</h3>
 				</div>
 				<div class="message-body">
