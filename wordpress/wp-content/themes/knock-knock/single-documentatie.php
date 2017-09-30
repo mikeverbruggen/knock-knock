@@ -15,9 +15,9 @@
 			<div class="message span8">
 				<div class="message-header">
 					<h3><?php the_title(); ?>
-						<small>
+						<span class="comment-count">
 							 <?php edit_post_link( $link, $before, $after, $id, $class ); ?> 
-						</small>
+						</span>
 					</h3>
 				</div>
 				<div class="message-body">
