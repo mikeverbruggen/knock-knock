@@ -24,7 +24,7 @@
 
   <body data-spy="scroll" data-target=".subnav" data-offset="50">
 
-	<?php if( current_user_can('editor') || current_user_can('administrator') ) {  ?> 
+	<?php if( current_user_can('administrator') ) {  ?> 
 
 		<div id="topNav">
 			<div>
