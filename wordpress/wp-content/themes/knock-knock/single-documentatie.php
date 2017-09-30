@@ -58,6 +58,8 @@
 				<?php wp_reset_postdata(); ?>
 			<?php endif; // End document relations ?>
 
+<?php if( current_user_can('administrator') ) {  ?> 
+
 			<?php /* Related items */
 
 				$relatedpostid = get_the_ID();
@@ -98,6 +100,9 @@
 				<?php wp_reset_postdata(); ?>
 
 			<?php endif; /* End Related */  ?>
+			
+
+<?php } ?>
 
 			<?php // Download overzicht
 			if ( have_rows( 'downloads' ) ) : ?>
