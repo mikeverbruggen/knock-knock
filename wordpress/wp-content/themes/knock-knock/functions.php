@@ -42,6 +42,11 @@ function register_my_menus() {
 }
 add_action( 'init', 'register_my_menus' );
 
+// Creat Advanced Custom Fields Option Page
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();
+}
+
 // Wordpress balk verbergen voor ingelogde gebruikers
 if (!current_user_can(‘edit_posts’)) {
  show_admin_bar(false);
