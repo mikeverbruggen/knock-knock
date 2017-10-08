@@ -24,20 +24,6 @@
 
   <body data-spy="scroll" data-target=".subnav" data-offset="50">
 
-	<?php if( current_user_can('administrator') ) {  ?> 
-
-		<div id="topNav">
-			<div>
-				<ul>
-					<li><a href="/">Klovaart Website</a> - <a href="/intranet/">Klovaart Intranet</a></li>
-				</ul>
-				<p id="userNav"><a href="<?php echo get_edit_post_link( $id, $context ); ?> ">Bewerken</a></p>
-			</div>
-		</div>
-
-
-	<?php } ?>
-
   <!-- Navbar
     ================================================== -->
     <div class="navbar navbar-fixed-top first" style=" z-index: 20;">
@@ -53,7 +39,7 @@
 			          class="dropdown-toggle"
 			          data-toggle="dropdown">
 			          <?php echo get_option('say_hello'); ?>
-			 
+
 					<?php $current_user = wp_get_current_user();
 				    	echo $current_user->display_name;
 					?>
@@ -85,8 +71,8 @@
         <div class="container">
 
 				<?php if ( is_user_logged_in() ) { ?>
-					
-		            <?php wp_nav_menu(array( 
+
+		            <?php wp_nav_menu(array(
 		                'menu'     	=> 'Hoofd',
 		                'menu_class'        => 'nav',
 						'container' => false,
