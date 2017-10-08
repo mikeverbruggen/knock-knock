@@ -5,6 +5,7 @@
 <section id="documentation">
 
 	<div class="page-header">
+		<a href="/wp-admin/post-new.php?post_type=documentatie" class="btn btn-large pull-right">Document toevoegen</a>
 		<h1>Documentatie</h1>
 	</div>
 
