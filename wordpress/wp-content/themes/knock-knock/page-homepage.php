@@ -121,7 +121,7 @@ $time_now = strtotime($date_now);
 
 
 // find date time in 7 days
-$time_next_week = strtotime('+2 week', $time_now);
+$time_next_week = strtotime('+3 week', $time_now);
 $date_next_week = date('Y-m-d H:i:s', $time_next_week);
 
 
