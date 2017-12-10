@@ -64,7 +64,7 @@ function cptui_register_my_cpts() {
 		"singular_name" => __( 'Document', '' ),
 		"menu_name" => __( 'Documentatie', '' ),
 		"all_items" => __( 'Alle documenten', '' ),
-		"add_new" => __( 'Nieuw (document) toevoegen', '' ),
+		"add_new" => __( 'Document toevoegen', '' ),
 		"add_new_item" => __( 'Voeg nieuwe document toe', '' ),
 		"edit_item" => __( 'Bewerk document', '' ),
 		"new_item" => __( 'Nieuw document', '' ),
@@ -134,6 +134,7 @@ function cptui_register_my_cpts() {
 	$labels = array(
 		"name" => __( 'Agenda items', '' ),
 		"singular_name" => __( 'Agenda item', '' ),
+		"add_new" => __( 'Agenda item toevoegen', '' ),
 	);
 
 	$args = array(
