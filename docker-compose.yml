@@ -1,22 +1,32 @@
-database:
-  image: mariadb
-  ports:
-    - 8079:3306
-  volumes:
-    - ./database:/var/lib/mysql
-  environment:
-    MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-wordpress:
-  image: wordpress
-  volumes:
-    - ./wordpress/wp-content:/var/www/html/wp-content
-  ports:
-    - 8080:80
-  links:
-    - database:mysql
-phpmyadmin:
-  image: phpmyadmin/phpmyadmin
-  ports:
-    - 8081:80
-  links:
-    - database:db
+version: '3'
+
+services:
+  database:
+    image: mariadb
+    ports:
+      - 8079:3306
+    volumes:
+      - ./database:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+
+  wordpress:
+    depends_on:
+      - database
+    image: wordpress:latest
+    volumes:
+      - ./wordpress/wp-content:/var/www/html/wp-content
+    ports:
+      - 8080:80
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: database:3306
+
+  phpmyadmin:
+    depends_on:
+      - database
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8081:80
+    restart: always
