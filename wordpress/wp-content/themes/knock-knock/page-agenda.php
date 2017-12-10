@@ -4,23 +4,49 @@
 
 <section id="grid-system">
   <div class="page-header">
+			<a href="/wp-admin/post-new.php?post_type=agenda" class="btn btn-large pull-right">Agenda item toevoegen</a>
     <h1>Agenda</h1>
   </div>
 
   <div class="row">
-	<div class="span8">
-		<?php $posts = get_posts(array(
-			'posts_per_page'	=> -1,
-	     	'orderby'     => 'meta_value',
-	        'meta_key' => 'start',
-            'order' => 'DESC',
-			'post_type'			=> 'agenda'
+	<div class="span12">
+		<?php 
+
+	// find date time now
+	$date_now = date('Y-m-d H:i:s');
+	$time_now = strtotime($date_now);
+
+
+	// find date time in 7 days
+	$time_next_week = strtotime('+200 week', $time_now);
+	$date_next_week = date('Y-m-d H:i:s', $time_next_week);
+
+	$posts = get_posts(array(
+		'posts_per_page'	=> 100,
+		'post_type'			=> 'agenda',
+		'meta_query' 		=> array(
+			array(
+						'key'			=> 'start',
+						'compare'		=> 'BETWEEN',
+						'value'			=> array( $date_now, $date_next_week ),
+						'type'			=> 'DATETIME'
+				)
+			),
+		'order'				=> 'ASC',
+		'orderby'			=> 'meta_value',
+		'meta_key'			=> 'start',
+		'meta_type'			=> 'DATETIME'
+			
 		)); if( $posts ): ?>
 
 		<?php foreach( $posts as $post ): setup_postdata( $post ); ?>
-		<div class="message span8">
+			
+		<div class="message span12">
 
 			<div class="message-header">
+				<span class="comment-count">
+					 <?php edit_post_link( $link, $before, $after, $id, $class ); ?> 
+				</span>
 			<h3><?php the_title(); ?></h3>
 			<p><strong><?php the_field( 'start' ); ?> tot <?php the_field( 'einde' ); ?></strong> <span style="color: #ddd;">.</span></p>
 			</div>
@@ -43,15 +69,7 @@
 		<?php endif;    /* Einde Agenda */  ?>
 
     </div>
-
-	<div class="span4">
-
-		<div class="alert alert-info">
-		  This is a dummy tekst.
-		</div>
-
-	</div>
-</div>
+  </div>
 
 
 </section>

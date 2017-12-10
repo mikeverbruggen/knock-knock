@@ -154,11 +154,9 @@ $posts = get_posts(array(
 
 		<?php foreach( $posts as $post ): setup_postdata( $post ); ?>
 
-									<li>
+							<li>
 								<i class="icon-calendar"></i>
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br/>
-
-								<?php if ( 1 == 0) { ?>
+								<b><?php the_title(); ?></b><br/>
 
 									<?php
 									$datestart = get_field('start');
@@ -171,13 +169,7 @@ $posts = get_posts(array(
 
 									?>
 
-
 									<?php echo $datestartday; ?> van <?php echo $datestarttime; ?> tot <?php echo $dateendtime; ?><br>
-
-								<?php } else { ?>
-									van: <?php the_field( 'start' ); ?><br />
-									tot: <?php the_field( 'einde' ); ?>
-								<?php } ?>
 
 							</li>
 
