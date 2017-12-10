@@ -65,7 +65,7 @@ function cptui_register_my_cpts() {
 		"menu_name" => __( 'Documentatie', '' ),
 		"all_items" => __( 'Alle documenten', '' ),
 		"add_new" => __( 'Document toevoegen', '' ),
-		"add_new_item" => __( 'Nieuw document aanmaken', '' ),
+		"add_new_item" => __( 'Vo', '' ),
 		"edit_item" => __( 'Bewerk document', '' ),
 		"new_item" => __( 'Nieuw document', '' ),
 		"view_item" => __( 'Bekijk docuement', '' ),
@@ -157,7 +157,6 @@ function cptui_register_my_cpts() {
 		"hierarchical" => false,
 		"rewrite" => array( "slug" => "agenda", "with_front" => true ),
 		"query_var" => true,
-		"supports" => array( "title", "editor", "thumbnail" ),
 	);
 
 	register_post_type( "agenda", $args );
