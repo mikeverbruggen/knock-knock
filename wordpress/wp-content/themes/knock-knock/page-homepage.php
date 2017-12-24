@@ -78,7 +78,7 @@
 
 					<?php if ( get_post_type( get_the_ID() ) == 'agenda' ) { ?>
 
-						<?php if ( get_the_modified_date() == get_the_date() ) {  /* Als het bericht nieuw is */  ?>
+						<?php if ( get_the_modified_date('c') == get_the_date('c') ) {  /* Als het bericht nieuw is */  ?>
 							<div class="stream-item">
 								<div class="stream-item-body small">
 										<i class="icon-calendar"></i> De activiteit <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> is aangemaakt op <?php the_modified_date(''); ?> om <?php the_modified_date('H:i'); ?>
@@ -120,7 +120,7 @@ $date_now = date('Y-m-d H:i:s');
 $time_now = strtotime($date_now);
 
 
-// find date time in 7 days
+// find date time in 4 weeks
 $time_next_week = strtotime('+4 week', $time_now);
 $date_next_week = date('Y-m-d H:i:s', $time_next_week);
 
@@ -130,13 +130,19 @@ $posts = get_posts(array(
 	'posts_per_page'	=> 100,
 	'post_type'			=> 'agenda',
 	'meta_query' 		=> array(
+		'relation'		=> 'AND',
 		array(
-					'key'			=> 'start',
-					'compare'		=> 'BETWEEN',
-					'value'			=> array( $date_now, $date_next_week ),
-					'type'			=> 'DATETIME'
-			)
+			'key'			=> 'type',
+			'compare'		=> '!=',
+			'value'			=> 'pr-prive'
 		),
+		array(
+			'key'			=> 'start',
+			'compare'		=> 'BETWEEN',
+			'value'			=> array( $date_now, $date_next_week ),
+			'type'			=> 'DATETIME'
+		)
+	),
 	'order'				=> 'ASC',
 	'orderby'			=> 'meta_value',
 	'meta_key'			=> 'start',
@@ -147,7 +153,7 @@ $posts = get_posts(array(
 
 	<div class="message span4">
 		<div class="message-header">
-		<h3><a href="/agenda">Agenda</a></h3>
+		<h3>Agenda</h3>
 		</div>
 		<div class="message-body">
 			<ul class="overview">
@@ -156,17 +162,20 @@ $posts = get_posts(array(
 
 							<li>
 								<i class="icon-calendar"></i>
-								<b><?php the_title(); ?></b><br/>
+								<b><?php the_title() ?>
+									<?php if ( get_field('type') == 'Reservering projectruimte - Openbaar'): ?>
+										-  <?php the_author_firstname( $post->post_author ); ?>
+									<?php endif ?>
+								</b><br/>
 
 									<?php
-									$datestart = get_field('start');
-									$datestartday = date("j F", strtotime($datestart));
-									$datestarttime = date("H:i", strtotime($datestart));
+									$datestart = get_field('start', false, false);
+									$datestartday = date_i18n("j F", strtotime($datestart));
+									$datestarttime = date_i18n("H:i", strtotime($datestart));
 
-									$dateend = get_field('einde');
-									$dateendday = date("j F", strtotime($dateend));
-									$dateendtime = date("H:i", strtotime($dateend));
-
+									$dateend = get_field('einde', false, false);
+									$dateendday = date_i18n("j F", strtotime($dateend));
+									$dateendtime = date_i18n("H:i", strtotime($dateend));
 									?>
 
 									<?php echo $datestartday; ?> van <?php echo $datestarttime; ?> tot <?php echo $dateendtime; ?><br>
@@ -177,6 +186,9 @@ $posts = get_posts(array(
 
 			</ul>
 		</div>
+		<div class="message-footer">
+			<a href="/agenda">Bekijk alle agenda items</a>
+		</div>
 	</div>
 
 		<?php wp_reset_postdata(); ?>
@@ -186,7 +198,7 @@ $posts = get_posts(array(
 
 	<?php /* Start Nieuwe bewoners */
 		$args = array(
-		'number' => 17,
+		'number' => 5,
 				'order'     => 'DESC',
 				'meta_key' => 'bewoner_sinds',
 				'orderby'   => 'meta_value', //or 'meta_value_num'
@@ -232,6 +244,9 @@ $posts = get_posts(array(
 
 				<?php } ?>
 
+		</div>
+		<div class="message-footer">
+			<a href="/bewoners">Bekijk alle bewoners</a>
 		</div>
 	</div>
 
