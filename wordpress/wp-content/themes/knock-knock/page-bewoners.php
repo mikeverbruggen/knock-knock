@@ -36,6 +36,7 @@
 			      <table class="table table-striped table-bordered" id="sortTableExample">
 			        <thead>
 			          <tr>
+			            <th class="blue"></th>
 			            <th class="blue">Voornaam</th>
 			            <th class="green">Achternaam</th>
 			            <th class="yellow">Adres</th>
@@ -52,6 +53,7 @@
 						$phone = get_field('resident_phone', $author_info); ?>
 
 			          <tr>
+			            <td><img src="<?php the_field( 'resident_profile_image', $author_info ); ?>" width="40" height="40" alt="" /></td>
 			            <td><?php echo $author_info->first_name; ?></td>
 			            <td><?php echo $author_info->last_name; ?></td>
 			            <td><?php the_field('resident_adres', $author_info); ?></td>
