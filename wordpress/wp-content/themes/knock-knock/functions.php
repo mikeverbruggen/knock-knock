@@ -164,3 +164,13 @@ function cptui_register_my_cpts() {
 }
 
 add_action( 'init', 'cptui_register_my_cpts' );
+
+function month_period($month, $year) {
+	$beginning_of_month = mktime(0, 0, 0, $month, 1, $year);
+	$end_of_month = mktime(23, 59, 59, $month, date('t', $beginning_of_month), $year);
+	return array(date('Y-m-d H:i:s', $beginning_of_month), date('Y-m-d H:i:s', $end_of_month));
+}
+
+function month_name($month) {
+	return ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'][$month - 1];
+}
