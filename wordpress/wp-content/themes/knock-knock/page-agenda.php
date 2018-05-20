@@ -1,42 +1,35 @@
 <?php /* Template Name: Agenda */ ?>
 <?php require_login(); ?>
 <?php get_header(); ?>
+<?php
+	$year = $_GET['jaar'] ?: date('Y');
+	$month = $_GET['maand'] ?: date('m');
+?>
 
 <section id="grid-system">
   <div class="page-header">
 			<a href="/wp-admin/post-new.php?post_type=agenda" class="btn btn-large pull-right">Agenda item toevoegen</a>
-    <h1>Agenda</h1>
+    <h1>Agenda - <?php echo month_name($month); ?> <?php echo $year; ?></h1>
   </div>
 
   <div class="row">
 	<div class="span12">
-		<?php
-
-	// find date time now
-	$date_now = date('Y-m-d H:i:s');
-	$time_now = strtotime($date_now);
-
-
-	// find date time in 7 days
-	$time_next_week = strtotime('+200 week', $time_now);
-	$date_next_week = date('Y-m-d H:i:s', $time_next_week);
-
+	<?php
 	$posts = get_posts(array(
-		'posts_per_page'	=> 100,
-		'post_type'			=> 'agenda',
-		'meta_query' 		=> array(
+		'post_type'  		 => 'agenda',
+		'posts_per_page' => 100,
+		'meta_query' 		 => array(
 			array(
-						'key'			=> 'start',
-						'compare'		=> 'BETWEEN',
-						'value'			=> array( $date_now, $date_next_week ),
-						'type'			=> 'DATETIME'
-				)
-			),
-		'order'				=> 'ASC',
-		'orderby'			=> 'meta_value',
-		'meta_key'			=> 'start',
-		'meta_type'			=> 'DATETIME'
-
+				'key'			=> 'start',
+				'compare'	=> 'BETWEEN',
+				'value'		=> month_period($month, $year),
+				'type'		=> 'DATETIME'
+			)
+		),
+		'order' 		=> 'ASC',
+		'orderby'		=> 'meta_value',
+		'meta_key'	=> 'start',
+		'meta_type'	=> 'DATETIME'
 		)); if( $posts ): ?>
 
 		<?php foreach( $posts as $post ): setup_postdata( $post ); ?>
@@ -83,6 +76,17 @@
     </div>
   </div>
 
+	<?php
+		$previousDate = date_create("$year-$month previous month");
+		$previousMonth = $previousDate->format('m');
+		$previousYear = $previousDate->format('Y');
+		$nextDate = date_create("$year-$month next month");
+		$nextMonth = $nextDate->format('m');
+		$nextYear = $nextDate->format('Y');
+	?>
+
+	<a href="/agenda?maand=<?php echo $previousMonth ?>&jaar=<?php echo $previousYear ?>" class="btn btn-large pull-left">Vorige maand</a>
+	<a href="/agenda?maand=<?php echo $nextMonth ?>&jaar=<?php echo $nextYear ?>" class="btn btn-large pull-right">Volgende maand</a>
 
 </section>
 
