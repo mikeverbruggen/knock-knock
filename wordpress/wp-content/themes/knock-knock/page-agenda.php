@@ -43,13 +43,12 @@
 			<h3><?php the_title(); ?></h3>
 			<span style="color:#888;"><?php the_field('type'); ?></span>
 			<?php
-				$datestart = get_field('start', false, false);
-				$datestartday = date_i18n("l j F", strtotime($datestart));
+				$datestart     = get_field('start', false, false);
+				$datestartday  = date_i18n("l j F", strtotime($datestart));
 				$datestarttime = date_i18n("H:i", strtotime($datestart));
-
-				$dateend = get_field('einde', false, false);
-				$dateendday = date_i18n("l j F", strtotime($dateend));
-				$dateendtime = date_i18n("H:i", strtotime($dateend));
+				$dateend       = get_field('einde', false, false);
+				$dateendday    = date_i18n("l j F", strtotime($dateend));
+				$dateendtime   = date_i18n("H:i", strtotime($dateend));
 			?>
 
 			<p><strong><?php echo ucfirst($datestartday); ?> van <?php echo $datestarttime; ?> tot
@@ -77,12 +76,12 @@
   </div>
 
 	<?php
-		$previousDate = date_create("$year-$month previous month");
+		$previousDate  = date_create("$year-$month previous month");
 		$previousMonth = $previousDate->format('m');
-		$previousYear = $previousDate->format('Y');
-		$nextDate = date_create("$year-$month next month");
-		$nextMonth = $nextDate->format('m');
-		$nextYear = $nextDate->format('Y');
+		$previousYear  = $previousDate->format('Y');
+		$nextDate      = date_create("$year-$month next month");
+		$nextMonth     = $nextDate->format('m');
+		$nextYear      = $nextDate->format('Y');
 	?>
 
 	<a href="/agenda?maand=<?php echo $previousMonth ?>&jaar=<?php echo $previousYear ?>" class="btn btn-large pull-left">Vorige maand</a>
