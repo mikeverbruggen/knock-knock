@@ -16,8 +16,9 @@
 	<div class="span12">
 	<?php
 	$posts = get_posts(array(
-		'post_type'  => 'agenda',
-		'meta_query' => array(
+		'post_type'  		 => 'agenda',
+		'posts_per_page' => 100,
+		'meta_query' 		 => array(
 			array(
 				'key'			=> 'start',
 				'compare'	=> 'BETWEEN',
