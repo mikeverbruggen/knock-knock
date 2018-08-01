@@ -15,7 +15,7 @@
 			<div class="message span8">
 				<div class="message-header">
 					<span class="comment-count">
-						 <?php edit_post_link( $link, $before, $after, $id, $class ); ?> 
+						 <?php edit_post_link( $link, $before, $after, $id, $class ); ?>
 					</span>
 					<h3><?php the_title(); ?>
 					</h3>
@@ -58,7 +58,35 @@
 				<?php wp_reset_postdata(); ?>
 			<?php endif; // End document relations ?>
 
-<?php if( current_user_can('administrator') ) {  ?> 
+			<?php // Download overzicht
+			if ( have_rows( 'downloads' ) ) : ?>
+
+				<div class="message span4">
+
+					<div class="message-header">
+					<h3>Downloads</h3>
+					</div>
+
+					<div class="message-body">
+						<ul class="overview">
+
+						<?php while ( have_rows( 'downloads' ) ) : the_row(); ?>
+						<?php $bestand = get_sub_field( 'bestand' ); ?>
+						<?php if ( $bestand ) { ?>
+							<li><i class="icon-file"></i><a href="<?php echo $bestand['url']; ?>"><?php the_sub_field( 'omschrijving' ); ?></a></li>
+						<?php } ?>
+						<?php endwhile; ?>
+
+						</ul>
+					</div>
+
+				</div>
+
+			<?php else : ?>
+			<?php // no rows found ?>
+			<?php endif; // Einde Download overzicht ?>
+
+<?php if( current_user_can('administrator') ) {  ?>
 
 			<?php /* Related items */
 
@@ -100,37 +128,9 @@
 				<?php wp_reset_postdata(); ?>
 
 			<?php endif; /* End Related */  ?>
-			
+
 
 <?php } ?>
-
-			<?php // Download overzicht
-			if ( have_rows( 'downloads' ) ) : ?>
-
-				<div class="message span4">
-
-					<div class="message-header">
-					<h3>Downloads</h3>
-					</div>
-
-					<div class="message-body">
-						<ul class="overview">
-
-						<?php while ( have_rows( 'downloads' ) ) : the_row(); ?>
-						<?php $bestand = get_sub_field( 'bestand' ); ?>
-						<?php if ( $bestand ) { ?>
-							<li><i class="icon-file"></i><a href="<?php echo $bestand['url']; ?>"><?php the_sub_field( 'omschrijving' ); ?></a></li>
-						<?php } ?>
-						<?php endwhile; ?>
-
-						</ul>
-					</div>
-
-				</div>
-
-			<?php else : ?>
-			<?php // no rows found ?>
-			<?php endif; // Einde Download overzicht ?>
 
 
 			<?php /* Items from the same category */
