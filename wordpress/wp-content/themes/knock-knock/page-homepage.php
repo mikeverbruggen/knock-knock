@@ -163,7 +163,7 @@ $posts = get_posts(array(
 							<li>
 								<i class="icon-calendar"></i>
 								<b><?php the_title() ?>
-									<?php if ( get_field('type') == 'Reservering projectruimte - Openbaar'): ?>
+									<?php if ( get_field('type') == 'pr-openbaar'): ?>
 										-  <?php the_author_firstname( $post->post_author ); ?>
 									<?php endif ?>
 								</b><br/>
@@ -187,7 +187,7 @@ $posts = get_posts(array(
 			</ul>
 		</div>
 		<div class="message-footer">
-			<a href="/agenda">Bekijk alle agenda items</a>
+			<a href="/agenda">Bekijk alle agenda items!</a>
 		</div>
 	</div>
 
